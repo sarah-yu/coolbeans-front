@@ -5,6 +5,7 @@ import Welcome from '../Welcome/Welcome'
 import Header from '../Header/Header'
 import Search from '../Search/Search'
 import CoffeeList from '../CoffeeList/CoffeeList'
+import Resource from '../Resource/Resource'
 
 import './App.css'
 
@@ -19,6 +20,11 @@ class App extends Component {
 							exact
 							path="/welcome"
 							render={props => <Welcome {...props} />}
+						/>
+						<Route
+							exact
+							path="/resources"
+							render={props => <Resource {...props} />}
 						/>
 						<Route
 							exact

@@ -113,3 +113,5 @@ class Resource extends Component {
 		)
 	}
 }
+export default Resource
+
