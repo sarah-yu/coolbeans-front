@@ -7,6 +7,7 @@ import Search from '../Search/Search'
 import CoffeeList from '../CoffeeList/CoffeeList'
 import Resource from '../Resource/Resource'
 import Coffee from '../Coffee/Coffee'
+import NewCoffee from '../NewCoffee/NewCoffee'
 
 import './App.css'
 
@@ -36,6 +37,11 @@ class App extends Component {
 							exact
 							path="/coffees/:_id"
 							render={props => <Coffee {...props} />}
+						/>
+						<Route
+							exact
+							path="/new-coffee"
+							render={props => <NewCoffee {...props} />}
 						/>
 						<Route
 							exact
