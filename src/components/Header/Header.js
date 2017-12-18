@@ -7,10 +7,9 @@ const Header = () => (
 	<header>
 		<Link to="/">
 			<img
+				className="logo"
 				src="https://i.imgur.com/kbYVG9n.png"
 				alt="Coolbeans Logo"
-				height="200"
-				width="300"
 			/>
 		</Link>
 		<nav>
