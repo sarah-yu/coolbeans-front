@@ -63,32 +63,36 @@ class NewCoffee extends Component {
 		return (
 			<div className="newCoffeeForm">
 				<h1>
-					We're always looking to expand our palette; add a new coffee below!
+					We are always looking to expand our palette; add a new coffee below!
 				</h1>
 				<form onSubmit={e => this.handleSubmitInput(e)}>
 					<p>
 						<label>Name: </label>
-						<textarea onChange={e => this.handleNameInput(e)} />
+						<input type="text" onChange={e => this.handleNameInput(e)} />
 					</p>
 
 					<p>
 						<label>Region: </label>
-						<textarea onChange={e => this.handleRegionInput(e)} />
+						<input type="text" onChange={e => this.handleRegionInput(e)} />
 					</p>
 
 					<p>
 						<label>Country: </label>
-						<textarea onChange={e => this.handleCountryInput(e)} />
+						<input type="text" onChange={e => this.handleCountryInput(e)} />
 					</p>
 
 					<p>
 						<label>Image Url: </label>
-						<textarea onChange={e => this.handleImgInput(e)} />
+						<input type="text" onChange={e => this.handleImgInput(e)} />
 					</p>
 
 					<p>
 						<label>Description: </label>
 						<textarea onChange={e => this.handleDescriptionInput(e)} />
+					</p>
+
+					<p>
+						<input type="submit" />
 					</p>
 				</form>
 			</div>
