@@ -53,6 +53,137 @@ class Coffee extends Component {
 		this.handleWeird = this.handleWeird.bind(this)
 	}
 
+	handleNameInput(e) {
+		this.setState({
+			name: e.target.value
+		})
+	}
+
+	handleRegionInput(e) {
+		this.setState({
+			region: e.target.value
+		})
+	}
+
+	handleCountryInput(e) {
+		this.setState({
+			country: e.target.value
+		})
+	}
+
+	handleImgInput(e) {
+		this.setState({
+			imgUrl: e.target.value
+		})
+	}
+
+	handleDescriptionInput(e) {
+		this.setState({
+			description: e.target.value
+		})
+	}
+
+	handleBody(e) {
+		this.setState({
+			body: e.target.value
+		})
+	}
+
+	handleAcidity(e) {
+		this.setState({
+			acidity: e.target.value
+		})
+	}
+
+	handleFruity(e) {
+		this.setState({
+			isFruity: e.target.checked
+		})
+	}
+
+	handleSour(e) {
+		this.setState({
+			isSour: e.target.checked
+		})
+	}
+
+	handleVeggie(e) {
+		this.setState({
+			isVeggie: e.target.checked
+		})
+	}
+
+	handleRoasted(e) {
+		this.setState({
+			isRoasted: e.target.checked
+		})
+	}
+
+	handleSpicy(e) {
+		this.setState({
+			isSpicy: e.target.checked
+		})
+	}
+
+	handleNuttyCocoa(e) {
+		this.setState({
+			isNuttyCocoa: e.target.checked
+		})
+	}
+
+	handleSweet(e) {
+		this.setState({
+			isSweet: e.target.checked
+		})
+	}
+
+	handleFloral(e) {
+		this.setState({
+			isFloral: e.target.checked
+		})
+	}
+
+	handleWeird(e) {
+		this.setState({
+			isWeird: e.target.checked
+		})
+	}
+
+	handleFormSubmit(e) {
+		e.preventDefault
+
+		axios
+			.put(`http://localhost:3001/coffees/${this.state.coffee._id}`, {
+				name: this.state.name,
+				region: this.state.region,
+				country: this.state.country,
+				imgUrl: this.state.imgUrl,
+				description: this.state.description,
+
+				acidity: this.state.flavorProfile.acidity,
+				body: this.state.flavorProfile.body,
+				isWeird: this.state.flavorProfile.isWeird,
+				isFloral: this.state.flavorProfile.isFloral,
+				isSweet: this.state.flavorProfile.isSweet,
+				isNuttyCocoa: this.state.flavorProfile.isNuttyCocoa,
+				isSpicy: this.state.flavorProfile.isSpicy,
+				isRoasted: this.state.flavorProfile.isRoasted,
+				isVeggie: this.state.flavorProfile.isVeggie,
+				isSour: this.state.flavorProfile.isSour,
+				isFruity: this.state.flavorProfile.isFruity
+			})
+			.then(response => {
+				console.log(response)
+				this.props.history.push(`/coffees/${this.state.coffee._id}`)
+				console.log('Updated!')
+			})
+			.catch(err => console.log(err))
+
+		this.setState({
+			editClicked: false
+		})
+	}
+
 	componentDidMount() {
 		axios
 			.get(`http://localhost:3001/coffees/${this.props.match.params._id}`)
@@ -158,6 +289,7 @@ class Coffee extends Component {
 							handleFruity={this.handleFruity}
 							handleRoasted={this.handleRoasted}
 							handleVeggie={this.handleVeggie}
+							handleFormSubmit={this.handleFormSubmit}
 						/>
 					</div>
 				) : (
