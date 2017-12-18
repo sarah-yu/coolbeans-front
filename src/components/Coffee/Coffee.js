@@ -255,6 +255,7 @@ class Coffee extends Component {
 					isFruity={this.state.isFruity}
 				/>
 				<button onClick={this.deleteCoffee}>Delete</button>
+				<button onClick={this.editCoffee}>Edit</button>
 				{this.state.editClicked ? (
 					<div className="edit-coffee">
 						<EditCoffee
