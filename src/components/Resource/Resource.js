@@ -105,7 +105,7 @@ class Resource extends Component {
 
 					<h5>Intro to coffee profiles: </h5>
 					<img
-						src="http://www.extracrispy.com/drinks/1881/a-beginners-guide-to-coffee-flavor-profiles-of-the-world"
+						src="https://i.pinimg.com/originals/29/2d/38/292d389baba11880be1bfe992ac6e672.jpg"
 						alt="World coffee map"
 					/>
 				</div>
@@ -113,5 +113,5 @@ class Resource extends Component {
 		)
 	}
 }
-
 export default Resource
+
