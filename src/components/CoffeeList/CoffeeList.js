@@ -15,13 +15,9 @@ class CoffeeList extends Component {
 		axios
 			.get('http://localhost:3001/coffees')
 			.then(response => {
-				console.log(response)
-
 				this.setState({
 					coffees: response.data
 				})
-
-				console.log(this.state.coffees)
 			})
 			.catch(err => {
 				console.log(err)
