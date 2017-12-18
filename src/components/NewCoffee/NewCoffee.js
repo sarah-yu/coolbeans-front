@@ -52,7 +52,7 @@ class NewCoffee extends Component {
 			.post('http://localhost:3001/coffees', this.state)
 			.then(response => {
 				console.log(response)
-				this.props.history.push('/')
+				this.props.history.push('/coffees')
 			})
 			.catch(err => {
 				console.log(err)
