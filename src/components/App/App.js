@@ -4,6 +4,7 @@ import { Route, Redirect, Switch } from 'react-router-dom'
 import Welcome from '../Welcome/Welcome'
 import Header from '../Header/Header'
 import Search from '../Search/Search'
+import CoffeeList from '../CoffeeList/CoffeeList'
 
 import './App.css'
 
@@ -18,6 +19,11 @@ class App extends Component {
 							exact
 							path="/welcome"
 							render={props => <Welcome {...props} />}
+						/>
+						<Route
+							exact
+							path="/coffees"
+							render={props => <CoffeeList {...props} />}
 						/>
 						<Route
 							exact
