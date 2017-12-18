@@ -159,5 +159,4 @@ class EditCoffee extends Component {
 	}
 }
 
-export default withRouter(EditArtwork)
-
+export default withRouter(EditCoffee)

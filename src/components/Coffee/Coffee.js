@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import axios from 'axios'
 
 import FlavorProfile from '../FlavorProfile/FlavorProfile'
+import EditCoffee from '../EditCoffee/EditCoffee'
 
 class Coffee extends Component {
 	constructor() {
@@ -34,22 +35,22 @@ class Coffee extends Component {
 		this.editCoffee = this.editCoffee.bind(this)
 
 		this.handleNameInput = this.handleNameInput.bind(this)
-    this.handleRegionInput = this.handleRegionInput.bind(this)
-    this.handleCountryInput = this.handleCountryInput.bind(this)
-    this.handleDescriptionInput = this.handleDescriptionInput.bind(this)
-    this.handleImgInput = this.handleImgInput.bind(this)
+		this.handleRegionInput = this.handleRegionInput.bind(this)
+		this.handleCountryInput = this.handleCountryInput.bind(this)
+		this.handleDescriptionInput = this.handleDescriptionInput.bind(this)
+		this.handleImgInput = this.handleImgInput.bind(this)
 
-    this.handleBody = this.handleBody.bind(this)
-    this.handleAcidity = this.handleAcidity.bind(this)
-    this.handleFruity = this.handleFruity.bind(this)
-    this.handleSour = this.handleSour.bind(this)
-    this.handleVeggie = this.handleVeggie.bind(this)
-    this.handleRoasted = this.handleRoasted.bind(this)
-    this.handleNuttyCocoa = this.handleNuttyCocoa.bind(this)
-    this.handleSpicy = this.handleSpicy.bind(this)
-    this.handleSweet = this.handleSweet.bind(this)
-    this.handleFloral = this.handleFloral.bind(this)
-    this.handleWeird = this.handleWeird.bind(this)
+		this.handleBody = this.handleBody.bind(this)
+		this.handleAcidity = this.handleAcidity.bind(this)
+		this.handleFruity = this.handleFruity.bind(this)
+		this.handleSour = this.handleSour.bind(this)
+		this.handleVeggie = this.handleVeggie.bind(this)
+		this.handleRoasted = this.handleRoasted.bind(this)
+		this.handleNuttyCocoa = this.handleNuttyCocoa.bind(this)
+		this.handleSpicy = this.handleSpicy.bind(this)
+		this.handleSweet = this.handleSweet.bind(this)
+		this.handleFloral = this.handleFloral.bind(this)
+		this.handleWeird = this.handleWeird.bind(this)
 	}
 
 	componentDidMount() {
@@ -78,8 +79,7 @@ class Coffee extends Component {
 					isRoasted: flavorProfile.notes.isRoasted,
 					isVeggie: flavorProfile.notes.isVeggie,
 					isSour: flavorProfile.notes.isSour,
-					isFruity: flavorProfile.notes.isFruity,
-
+					isFruity: flavorProfile.notes.isFruity
 				})
 			})
 			.catch(err => {
@@ -97,7 +97,7 @@ class Coffee extends Component {
 			.catch(err => console.log(err))
 	}
 
-	editCoffee(){
+	editCoffee() {
 		this.setState({
 			editClicked: !this.state.editClicked
 		})
@@ -124,44 +124,46 @@ class Coffee extends Component {
 					isFruity={this.state.isFruity}
 				/>
 				<button onClick={this.deleteCoffee}>Delete</button>
+				{this.state.editClicked ? (
+					<div className="edit-coffee">
+						<EditCoffee
+							name={this.state.name}
+							region={this.state.region}
+							country={this.state.country}
+							imgUrl={this.state.imgUrl}
+							description={this.state.description}
+							handleNameInput={this.handleNameInput}
+							handleRegionInput={this.handleRegionInput}
+							handleCountryInput={this.handleCountryInput}
+							handleDescriptionInput={this.handleDescriptionInput}
+							acidity={this.state.acidity}
+							body={this.state.body}
+							isWeird={this.state.isWeird}
+							isFloral={this.state.isFloral}
+							isSweet={this.state.isSweet}
+							isNuttyCocoa={this.state.isNuttyCocoa}
+							isSpicy={this.state.isSpicy}
+							isRoasted={this.state.isRoasted}
+							isVeggie={this.state.isVeggie}
+							isSour={this.state.isSour}
+							isFruity={this.state.isFruity}
+							handleBody={this.handleBody}
+							handleAcidity={this.handleAcidity}
+							handleSour={this.handleSour}
+							handleSweet={this.handleSweet}
+							handleSpicy={this.handleSpicy}
+							handleWeird={this.handleWeird}
+							handleFloral={this.handleFloral}
+							handleNuttyCocoa={this.handleNuttyCocoa}
+							handleFruity={this.handleFruity}
+							handleRoasted={this.handleRoasted}
+							handleVeggie={this.handleVeggie}
+						/>
+					</div>
+				) : (
+					''
+				)}
 			</div>
-			{this.state.editClicked ? (
-				<div className='edit-coffee'>
-					<EditCoffee
-						name={this.state.name}
-						region={this.state.region}
-						country={this.state.country}
-						imgUrl={this.state.imgUrl}
-						description={this.state.description}
-						handleNameInput={this.handleNameInput}
-						handleRegionInput={this.handleRegionInput}
-						handleCountryInput={this.handleCountryInput}
-						handleDescriptionInput={this.handleDescriptionInput}
-
-						acidity={this.state.acidity}
-						body={this.state.body}
-						isWeird={this.state.isWeird}
-						isFloral={this.state.isFloral}
-						isSweet={this.state.isSweet}
-						isNuttyCocoa={this.state.isNuttyCocoa}
-						isSpicy={this.state.isSpicy}
-						isRoasted={this.state.isRoasted}
-						isVeggie={this.state.isVeggie}
-						isSour={this.state.isSour}
-						isFruity={this.state.isFruity}
-						handleBody={this.handleBody}
-						handleAcidity={this.handleAcidity}
-						handleSour={this.handleSour}
-						handleSweet={this.handleSweet}
-						handleSpicy={this.handleSpicy}
-						handleWeird={this.handleWeird}
-						handleFloral={this.handleFloral}
-						handleNuttyCocoa={this.handleNuttyCocoa}
-						handleFruity={this.handleFruity}
-						handleRoasted={this.handleRoasted}
-						handleVeggie={this.handleVeggie}
-					/> ) : ( '' )}
-				</div>
 		)
 	}
 }
