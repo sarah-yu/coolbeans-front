@@ -3,41 +3,49 @@ import axios from 'axios'
 
 import FlavorProfile from '../FlavorProfile/FlavorProfile.js'
 
-class FlavorProfile extends Component {
 class Coffee extends Component {
-
-
-}
-
-
-const Coffee = ({
-	name,
-	region,
-	country,
-	imgUrl,
-	description,
-	flavorProfile,
-	...props
-}) => {
-	return (
-		<div>
-			<h1> {region} </h1>
-			<h2> {name} </h2>
-			<img src={imgUrl} alt={name} />
-			<p> {description} </p>
-			<h4> Flavor Profile Attributes </h4>
-			<FlavorProfile name={name} />
-		</div>
-	)
-}
-
-Coffee.propTypes = {
-	name: PropTypes.string.isRequired,
-	region: PropTypes.string.isRequired,
-	country: PropTypes.string.isRequired,
-	imgUrl: PropTypes.string.isRequired,
-	description: PropTypes.string.isRequired,
-	flavorProfile: PropTypes.array.isRequired
+	constructor() {
+		super()
+		this.state = {
+			name: null,
+			region: null,
+			country: null,
+			imgUrl: null,
+			description: null,
+			flavorProfile: [],
+			id: null
+		}
+	}
+	componentDidMount() {
+		axios
+			.get(`http://localhost:3001/coffees/${this.props.match.params._id}`)
+			.then(res => {
+				console.log(res.data)
+				this.setState({
+					name: res.data.name,
+					region: res.data.region,
+					country: res.data.country,
+					imgUrl: res.data.imgUrl,
+					description: res.data.description,
+					flavorProfile: res.data.flavorProfile,
+					id: res.data._id
+				})
+			})
+			.catch(err => {
+				console.log(err)
+			})
+	}
+	render() {
+		return (
+			<div>
+				<h1> {this.state.region} </h1>
+				<h2> {this.state.name} </h2>
+				<img src={this.state.imgUrl} alt={this.state.name} />
+				<p> {this.state.description} </p>
+				<h4> Flavor Profile Attributes </h4>
+			</div>
+		)
+	}
 }
 
 export default Coffee

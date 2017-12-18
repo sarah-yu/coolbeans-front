@@ -6,6 +6,7 @@ import Header from '../Header/Header'
 import Search from '../Search/Search'
 import CoffeeList from '../CoffeeList/CoffeeList'
 import Resource from '../Resource/Resource'
+import Coffee from '../Coffee/Coffee'
 
 import './App.css'
 
@@ -30,6 +31,11 @@ class App extends Component {
 							exact
 							path="/coffees"
 							render={props => <CoffeeList {...props} />}
+						/>
+						<Route
+							exact
+							path="/coffees/:_id"
+							render={props => <Coffee {...props} />}
 						/>
 						<Route
 							exact
