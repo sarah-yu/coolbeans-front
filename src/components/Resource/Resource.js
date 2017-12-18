@@ -113,5 +113,5 @@ class Resource extends Component {
 		)
 	}
 }
-export default Resource
 
+export default Resource
