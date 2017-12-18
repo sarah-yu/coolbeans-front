@@ -7,17 +7,19 @@ class FlavorProfile extends Component {
 		this.state = {
 			body: null,
 			acidity: null,
-			notes: []
+			notes: [],
+			id: null
 		}
 	}
 	componentDidMount() {
 		axios
-			.get('http://localhost:3001/coffees')
+			.get(`#`)
 			.then(res => {
 				this.setState({
 					body: res.data.body,
 					acidity: res.data.acidity,
-					notes: res.data.notes
+					notes: res.data.notes,
+					id: res.data._id
 				})
 			})
 			.catch(err => {
@@ -29,7 +31,7 @@ class FlavorProfile extends Component {
 		return (
 			<div>
 				<div className="flavor-profile-body">
-					<div className="flavor-profile-tag"> {this.state.body} body </div>
+					<div className="flavor-profile-tag"> {this.props.body} body </div>
 				</div>
 				<div className="flavor-profile-acidity">
 					<div className="flavor-profile-tag">{this.state.acidity} acidity</div>
