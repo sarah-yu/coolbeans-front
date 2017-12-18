@@ -68,7 +68,7 @@ class EditCoffee extends Component {
 							<input
 								type="checkbox"
 								name="isFruity"
-								value={this.props.flavorProfile.isFruity}
+								value={this.props.isFruity}
 								onChange={this.props.handleFruity}
 							/>
 						</p>
@@ -78,7 +78,7 @@ class EditCoffee extends Component {
 							<input
 								type="checkbox"
 								name="isSour"
-								value={this.props.flavorProfile.isSour}
+								value={this.props.isSour}
 								onChange={this.props.handleSour}
 							/>
 						</p>
@@ -88,7 +88,7 @@ class EditCoffee extends Component {
 							<input
 								type="checkbox"
 								name="isVeggie"
-								value={this.props.flavorProfile.isVeggie}
+								value={this.props.isVeggie}
 								onChange={this.props.handleVeggie}
 							/>
 						</p>
@@ -98,7 +98,7 @@ class EditCoffee extends Component {
 							<input
 								type="checkbox"
 								name="isRoasted"
-								value={this.props.flavorProfile.isRoasted}
+								value={this.props.isRoasted}
 								onChange={this.props.handleRoasted}
 							/>
 						</p>
@@ -108,7 +108,7 @@ class EditCoffee extends Component {
 							<input
 								type="checkbox"
 								name="isSpicy"
-								value={this.props.flavorProfile.isSpicy}
+								value={this.props.isSpicy}
 								onChange={this.props.handleSpicy}
 							/>
 						</p>
@@ -118,7 +118,7 @@ class EditCoffee extends Component {
 							<input
 								type="checkbox"
 								name="isFruity"
-								value={this.props.flavorProfile.isFruity}
+								value={this.props.isFruity}
 								onChange={this.props.handleFruity}
 							/>
 						</p>
@@ -128,7 +128,7 @@ class EditCoffee extends Component {
 							<input
 								type="checkbox"
 								name="isNuttyCocoa"
-								value={this.props.flavorProfile.isNuttyCocoa}
+								value={this.props.isNuttyCocoa}
 								onChange={this.props.handleNuttyCocoa}
 							/>
 						</p>
@@ -138,7 +138,7 @@ class EditCoffee extends Component {
 							<input
 								type="checkbox"
 								name="isSweet"
-								value={this.props.flavorProfile.isSweet}
+								value={this.props.isSweet}
 								onChange={this.props.handleSweet}
 							/>
 						</p>
@@ -148,7 +148,7 @@ class EditCoffee extends Component {
 							<input
 								type="checkbox"
 								name="isFloral"
-								value={this.props.flavorProfile.isFloral}
+								value={this.props.isFloral}
 								onChange={this.props.handleFloral}
 							/>
 						</p>
