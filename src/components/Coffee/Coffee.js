@@ -1,23 +1,22 @@
 import React, { Component } from 'react'
 import axios from 'axios'
 
-import FlavorProfile from '../FlavorProfile/FlavorProfile.js'
+import FlavorProfile from '../FlavorProfile/FlavorProfile'
 
 class Coffee extends Component {
 	constructor() {
 		super()
 
 		this.state = {
-			name: null,
-			region: null,
-			country: null,
-			imgUrl: null,
-			description: null,
-			flavorProfile: [],
-			id: null,
-			acidity: null,
-			body: null,
+			id: '',
+			name: '',
+			region: '',
+			country: '',
+			imgUrl: '',
+			description: '',
 
+			acidity: '',
+			body: '',
 			isWeird: false,
 			isFloral: false,
 			isSweet: false,
@@ -36,24 +35,29 @@ class Coffee extends Component {
 		axios
 			.get(`http://localhost:3001/coffees/${this.props.match.params._id}`)
 			.then(res => {
+				console.log(res.data)
+
+				let flavorProfile = res.data.flavorProfile[0]
+
 				this.setState({
+					id: res.data._id,
 					name: res.data.name,
 					region: res.data.region,
 					country: res.data.country,
 					imgUrl: res.data.imgUrl,
 					description: res.data.description,
-					flavorProfile: res.data.flavorProfile,
-					id: res.data._id,
 
-					isWeird: res.data.flavorProfile.notes.isWeird,
-					isFloral: res.data.flavorProfile.notes.isFloral,
-					isSweet: res.data.flavorProfile.notes.isSweet,
-					isNuttyCocoa: res.data.flavorProfile.notes.isNuttyCocoa,
-					isSpicy: res.data.flavorProfile.notes.isSpicy,
-					isRoasted: res.data.flavorProfile.notes.isRoasted,
-					isVeggie: res.data.flavorProfile.notes.isVeggie,
-					isSour: res.data.flavorProfile.notes.isSour,
-					isFruity: res.data.flavorProfile.notes.isFruity
+					acidity: flavorProfile.acidity,
+					body: flavorProfile.body,
+					isWeird: flavorProfile.notes.isWeird,
+					isFloral: flavorProfile.notes.isFloral,
+					isSweet: flavorProfile.notes.isSweet,
+					isNuttyCocoa: flavorProfile.notes.isNuttyCocoa,
+					isSpicy: flavorProfile.notes.isSpicy,
+					isRoasted: flavorProfile.notes.isRoasted,
+					isVeggie: flavorProfile.notes.isVeggie,
+					isSour: flavorProfile.notes.isSour,
+					isFruity: flavorProfile.notes.isFruity
 				})
 			})
 			.catch(err => {
@@ -74,13 +78,11 @@ class Coffee extends Component {
 	render() {
 		return (
 			<div>
-				<h1> {this.state.region} </h1>
-				<h2> {this.state.name} </h2>
 				<img src={this.state.imgUrl} alt={this.state.name} />
-				<p> {this.state.description} </p>
-				<h4> Flavor Profile Attributes </h4>
+				<h2>Country: {this.state.country}</h2>
+				<h3>Region: {this.state.region}</h3>
+				<p>Description: {this.state.description}</p>
 				<FlavorProfile
-					id={this.state._id}
 					acidity={this.state.acidity}
 					body={this.state.body}
 					isWeird={this.state.isWeird}
