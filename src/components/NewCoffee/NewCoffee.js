@@ -26,6 +26,24 @@ class NewCoffee extends Component {
 			isSour: false,
 			isFruity: false
 		}
+
+		this.handleNameInput = this.handleNameInput.bind(this)
+		this.handleRegionInput = this.handleRegionInput.bind(this)
+		this.handleCountryInput = this.handleCountryInput.bind(this)
+		this.handleDescriptionInput = this.handleDescriptionInput.bind(this)
+		this.handleImgInput = this.handleImgInput.bind(this)
+
+		this.handleBody = this.handleBody.bind(this)
+		this.handleAcidity = this.handleAcidity.bind(this)
+		this.handleFruity = this.handleFruity.bind(this)
+		this.handleSour = this.handleSour.bind(this)
+		this.handleVeggie = this.handleVeggie.bind(this)
+		this.handleRoasted = this.handleRoasted.bind(this)
+		this.handleNuttyCocoa = this.handleNuttyCocoa.bind(this)
+		this.handleSpicy = this.handleSpicy.bind(this)
+		this.handleSweet = this.handleSweet.bind(this)
+		this.handleFloral = this.handleFloral.bind(this)
+		this.handleWeird = this.handleWeird.bind(this)
 	}
 
 	handleNameInput(e) {
