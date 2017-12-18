@@ -19,6 +19,7 @@ class Coffee extends Component {
 
 		this.deleteCoffee = this.deleteCoffee.bind(this)
 	}
+
 	componentDidMount() {
 		axios
 			.get(`http://localhost:3001/coffees/${this.props.match.params._id}`)
@@ -41,7 +42,7 @@ class Coffee extends Component {
 	deleteCoffee() {
 		axios
 			.delete(`http://localhost:3001/coffees/${this.props.match.params._id}`)
-			.then(response => {
+			.then(res => {
 				console.log(`${this.state.name} coffee was deleted.`)
 				this.props.history.push('/coffees')
 			})
