@@ -6,7 +6,12 @@ import './Header.css'
 const Header = () => (
 	<header>
 		<Link to="/">
-			<h1>Coffee Logo</h1>
+			<img
+				src="https://i.imgur.com/kbYVG9n.png"
+				alt="Coolbeans Logo"
+				height="200"
+				width="300"
+			/>
 		</Link>
 		<nav>
 			<Link to="/">Home</Link>
