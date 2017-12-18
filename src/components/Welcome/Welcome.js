@@ -4,9 +4,9 @@ import { Link } from 'react-router-dom'
 import './Welcome.css'
 
 const Welcome = () => (
-	<section class="welcome">
+	<section className="welcome">
 		<h1>Welcome to Cool Beans! Click a link to get started:</h1>
-		<nav class="welcome-nav">
+		<nav className="welcome-nav">
 			<ul>
 				<li>
 					<Link to="/resources">Resources</Link> - Learn more about coffee
