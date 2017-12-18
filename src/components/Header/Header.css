@@ -7,6 +7,7 @@ header {
 
 nav a {
 	display: inline-block;
+	letter-spacing: 0.7px;
 	margin-right: 10px;
 }
 
