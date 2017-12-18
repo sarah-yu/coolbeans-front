@@ -1,6 +1,15 @@
 import React, { Component } from 'react'
 import axios from 'axios'
 
+import FlavorProfile from '../FlavorProfile/FlavorProfile.js'
+
+class FlavorProfile extends Component {
+class Coffee extends Component {
+
+
+}
+
+
 const Coffee = ({
 	name,
 	region,
