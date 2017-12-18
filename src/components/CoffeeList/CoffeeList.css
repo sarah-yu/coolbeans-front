@@ -1,0 +1,19 @@
+.coffees {
+	display: flex;
+	flex-flow: row wrap;
+	align-items: flex-end;
+	justify-content: space-around;
+}
+
+.coffee {
+	margin: 20px;
+}
+
+.coffee-img {
+	width: 380px;
+}
+
+.coffee-notes {
+	font-size: 10px;
+	text-transform: uppercase;
+}
