@@ -14,7 +14,19 @@ class Coffee extends Component {
 			imgUrl: null,
 			description: null,
 			flavorProfile: [],
-			id: null
+			id: null,
+			acidity: null,
+			body: null,
+
+			isWeird: false,
+			isFloral: false,
+			isSweet: false,
+			isNuttyCocoa: false,
+			isSpicy: false,
+			isRoasted: false,
+			isVeggie: false,
+			isSour: false,
+			isFruity: false
 		}
 
 		this.deleteCoffee = this.deleteCoffee.bind(this)
@@ -31,7 +43,17 @@ class Coffee extends Component {
 					imgUrl: res.data.imgUrl,
 					description: res.data.description,
 					flavorProfile: res.data.flavorProfile,
-					id: res.data._id
+					id: res.data._id,
+
+					isWeird: res.data.flavorProfile.notes.isWeird,
+					isFloral: res.data.flavorProfile.notes.isFloral,
+					isSweet: res.data.flavorProfile.notes.isSweet,
+					isNuttyCocoa: res.data.flavorProfile.notes.isNuttyCocoa,
+					isSpicy: res.data.flavorProfile.notes.isSpicy,
+					isRoasted: res.data.flavorProfile.notes.isRoasted,
+					isVeggie: res.data.flavorProfile.notes.isVeggie,
+					isSour: res.data.flavorProfile.notes.isSour,
+					isFruity: res.data.flavorProfile.notes.isFruity
 				})
 			})
 			.catch(err => {
@@ -57,6 +79,20 @@ class Coffee extends Component {
 				<img src={this.state.imgUrl} alt={this.state.name} />
 				<p> {this.state.description} </p>
 				<h4> Flavor Profile Attributes </h4>
+				<FlavorProfile
+					id={this.state._id}
+					acidity={this.state.acidity}
+					body={this.state.body}
+					isWeird={this.state.isWeird}
+					isFloral={this.state.isFloral}
+					isSweet={this.state.isSweet}
+					isNuttyCocoa={this.state.isNuttyCocoa}
+					isSpicy={this.state.isSpicy}
+					isRoasted={this.state.isRoasted}
+					isVeggie={this.state.isVeggie}
+					isSour={this.state.isSour}
+					isFruity={this.state.isFruity}
+				/>
 				<button onClick={this.deleteCoffee}>Delete</button>
 			</div>
 		)
