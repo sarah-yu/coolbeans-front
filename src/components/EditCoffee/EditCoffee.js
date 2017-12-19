@@ -5,156 +5,167 @@ import '../NewCoffee/NewCoffee.css'
 class EditCoffee extends Component {
 	render() {
 		return (
-			<div>
-				<div className="editProfileForm">
-					<h1> Edit this coffee's general details! </h1>
+			<div className="form-container">
+				<h2>Edit this coffee's general details!</h2>
+
+				<div className="the-form">
 					<form onSubmit={this.props.handleFormSubmit}>
-						<p>
-							<label>Name: </label>
-							<input
-								type="text"
-								name="name"
-								value={this.props.name}
-								onChange={this.props.handleNameInput}
-							/>
-						</p>
+						<div className="form-sides">
+							<div className="form-left">
+								<div className="form-section">
+									<label className="form-section-heading">Coffee</label>
+								</div>
+								<div className="form-section">
+									<label>Name: </label>
+									<input
+										type="text"
+										name="name"
+										value={this.props.name}
+										className="form-field"
+										onChange={this.props.handleNameInput}
+									/>
+								</div>
 
-						<p>
-							<label>Region: </label>
-							<input
-								type="text"
-								name="region"
-								value={this.props.region}
-								onChange={this.props.handleRegionInput}
-							/>
-						</p>
+								<div className="form-section">
+									<label>Region: </label>
+									<input
+										type="text"
+										name="region"
+										value={this.props.region}
+										className="form-field"
+										onChange={this.props.handleRegionInput}
+									/>
+								</div>
 
-						<p>
-							<label>Country: </label>
-							<input
-								type="text"
-								name="country"
-								value={this.props.country}
-								onChange={this.props.handleCountryInput}
-							/>
-						</p>
+								<div className="form-section">
+									<label>Country: </label>
+									<input
+										type="text"
+										name="country"
+										value={this.props.country}
+										className="form-field"
+										onChange={this.props.handleCountryInput}
+									/>
+								</div>
 
-						<p>
-							<label>Image URL: </label>
-							<input
-								type="text"
-								name="imgUrl"
-								value={this.props.imgUrl}
-								onChange={this.props.handleImgInput}
-							/>
-						</p>
+								<div className="form-section">
+									<label>Image URL: </label>
+									<input
+										type="text"
+										name="imgUrl"
+										value={this.props.imgUrl}
+										className="form-field"
+										onChange={this.props.handleImgInput}
+									/>
+								</div>
 
-						<p>
-							<label>Description: </label>
-							<input
-								type="text"
-								name="description"
-								value={this.props.description}
-								onChange={this.props.handleDescriptionInput}
-							/>
-						</p>
-						<input type="submit" />
-					</form>
-				</div>
+								<div className="form-section">
+									<label>Description: </label>
+									<textarea
+										name="description"
+										value={this.props.description}
+										onChange={this.props.handleDescriptionInput}
+									/>
+								</div>
+							</div>
 
-				<div className="editFlavorProfileForm">
-					<h1>Edit this coffee's flavor profile!</h1>
-					<form>
-						<p>
-							<label>Fruity: </label>
-							<input
-								type="checkbox"
-								name="isFruity"
-								value={this.props.isFruity}
-								onChange={this.props.handleFruity}
-							/>
-						</p>
+							<div className="form-right">
+								<div className="form-section">
+									<label className="form-section-heading">Flavor Profile</label>
+								</div>
 
-						<p>
-							<label>Sour: </label>
-							<input
-								type="checkbox"
-								name="isSour"
-								value={this.props.isSour}
-								onChange={this.props.handleSour}
-							/>
-						</p>
+								<div className="form-section">
+									<label>Body: </label>
+									<input
+										type="text"
+										name="body"
+										className="form-field"
+										value="body"
+										onChange={this.props.handleBody}
+									/>
+								</div>
 
-						<p>
-							<label>Earthy/Green: </label>
-							<input
-								type="checkbox"
-								name="isVeggie"
-								value={this.props.isVeggie}
-								onChange={this.props.handleVeggie}
-							/>
-						</p>
+								<div className="form-section">
+									<label>Acidity: </label>
+									<input
+										type="text"
+										name="acidity"
+										className="form-field"
+										value="acidity"
+										onChange={this.props.handleAcidity}
+									/>
+								</div>
 
-						<p>
-							<label>Roasted: </label>
-							<input
-								type="checkbox"
-								name="isRoasted"
-								value={this.props.isRoasted}
-								onChange={this.props.handleRoasted}
-							/>
-						</p>
-
-						<p>
-							<label>Spicy: </label>
-							<input
-								type="checkbox"
-								name="isSpicy"
-								value={this.props.isSpicy}
-								onChange={this.props.handleSpicy}
-							/>
-						</p>
-
-						<p>
-							<label>Fruity: </label>
-							<input
-								type="checkbox"
-								name="isFruity"
-								value={this.props.isFruity}
-								onChange={this.props.handleFruity}
-							/>
-						</p>
-
-						<p>
-							<label>Nutty/Chocolate-y: </label>
-							<input
-								type="checkbox"
-								name="isNuttyCocoa"
-								value={this.props.isNuttyCocoa}
-								onChange={this.props.handleNuttyCocoa}
-							/>
-						</p>
-
-						<p>
-							<label>Sweet: </label>
-							<input
-								type="checkbox"
-								name="isSweet"
-								value={this.props.isSweet}
-								onChange={this.props.handleSweet}
-							/>
-						</p>
-
-						<p>
-							<label>Floral: </label>
-							<input
-								type="checkbox"
-								name="isFloral"
-								value={this.props.isFloral}
-								onChange={this.props.handleFloral}
-							/>
-						</p>
-						<input type="submit" />
+								<div className="form-section">
+									<input
+										type="checkbox"
+										name="isFruity"
+										value={this.props.isFruity}
+										onChange={this.props.handleFruity}
+									/>{' '}
+									Fruity<br />
+									<input
+										type="checkbox"
+										name="isSour"
+										value={this.props.isSour}
+										onChange={this.props.handleSour}
+									/>{' '}
+									Sour/Fermented<br />
+									<input
+										type="checkbox"
+										name="isVeggie"
+										value={this.props.isVeggie}
+										onChange={this.props.handleVeggie}
+									/>{' '}
+									Earthy/ Green <br />
+									<input
+										type="checkbox"
+										name="isRoasted"
+										value={this.props.isRoasted}
+										onChange={this.props.handleRoasted}
+									/>{' '}
+									Roasted<br />
+									<input
+										type="checkbox"
+										name="isSpicy"
+										value={this.props.isSpicy}
+										onChange={this.props.handleSpicy}
+									/>{' '}
+									Spicy<br />
+									<input
+										type="checkbox"
+										name="isNuttyCocoa"
+										value={this.props.isNuttyCocoa}
+										onChange={this.props.handleNuttyCocoa}
+									/>{' '}
+									Nutty/Chocolate-y<br />
+									<input
+										type="checkbox"
+										name="isSweet"
+										value={this.props.isSweet}
+										onChange={this.props.handleSweet}
+									/>{' '}
+									Sweet<br />
+									<input
+										type="checkbox"
+										name="isFloral"
+										value={this.props.isFloral}
+										onChange={this.props.handleFloral}
+									/>{' '}
+									Floral<br />
+									<input
+										type="checkbox"
+										name="isWeird"
+										value={this.props.isWeird}
+										onChange={this.props.handleWeird}
+									/>{' '}
+									Weird<br />
+								</div>
+							</div>
+						</div>
+						<div className="form-section form-submit-btn">
+							<input type="submit" className="btn" />
+						</div>
 					</form>
 				</div>
 			</div>
