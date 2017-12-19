@@ -51,7 +51,7 @@ class Discover extends Component {
 			body: e.target.innerHTML
 		})
 
-		this.getCoffees(body)
+		// this.getCoffees(body)
 	}
 
 	handleAcidity(e) {
@@ -60,7 +60,7 @@ class Discover extends Component {
 			acidity: e.target.innerHTML
 		})
 
-		this.getCoffees(acidity)
+		// this.getCoffees(acidity)
 	}
 
 	getCoffees(flavorProfileProp) {
@@ -80,18 +80,6 @@ class Discover extends Component {
 	render() {
 		return (
 			<div className="discover">
-				<DiscoverCriteria
-					criteriaName="Body"
-					criteria={bodyCriteria}
-					handleCriteria={this.handleBody}
-				/>
-
-				<DiscoverCriteria
-					criteriaName="Acidity"
-					criteria={acidityCriteria}
-					handleCriteria={this.handleAcidity}
-				/>
-
 				{this.state.discoverResults.length > 0 ? (
 					<DiscoverResult discoverResults={this.state.discoverResults} />
 				) : (
