@@ -8,20 +8,6 @@ class Discover extends Component {
 	constructor(props) {
 		super(props)
 
-		const bodyCriteria = ['Light', 'Balanced', 'Full']
-		const acidityCriteria = ['Low', 'Medium', 'High']
-		const notesCriteria = [
-			'Fruity',
-			'Sour',
-			'Earthy',
-			'Roasted',
-			'Spicy',
-			'Nutty / Chocolatey',
-			'Sweet',
-			'Floral',
-			'Weird'
-		]
-
 		this.state = {
 			coffees: [],
 			bodyClicked: false,
@@ -78,8 +64,28 @@ class Discover extends Component {
 	}
 
 	render() {
+		const bodyCriteria = ['Light', 'Balanced', 'Full']
+		const acidityCriteria = ['Low', 'Medium', 'High']
+		const notesCriteria = [
+			'Fruity',
+			'Sour',
+			'Earthy',
+			'Roasted',
+			'Spicy',
+			'Nutty / Chocolatey',
+			'Sweet',
+			'Floral',
+			'Weird'
+		]
+
 		return (
 			<div className="discover">
+				<DiscoverCriteria
+					criteriaName="Body"
+					criteria={bodyCriteria}
+					handleCriteria={this.handleBody}
+				/>
+
 				{this.state.discoverResults.length > 0 ? (
 					<DiscoverResult discoverResults={this.state.discoverResults} />
 				) : (
