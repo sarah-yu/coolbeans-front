@@ -1,12 +1,17 @@
 import React, { Component } from 'react'
 import axios from 'axios'
 
+import SearchResult from '../SearchResult/SearchResult'
+
+import './Search.css'
+
 class Search extends Component {
 	constructor(props) {
 		super(props)
 
 		this.state = {
-			body: ''
+			body: '',
+			searchResults: []
 		}
 	}
 
@@ -24,7 +29,12 @@ class Search extends Component {
 				let flavorProfile = coffee.flavorProfile[0]
 				return flavorProfile.body === this.state.body
 			})
+
 			console.log(results)
+
+			this.setState({
+				searchResults: results
+			})
 		})
 	}
 
@@ -32,9 +42,20 @@ class Search extends Component {
 		return (
 			<div className="search">
 				<h2>Body</h2>
-				<button onClick={e => this.handleBody(e)}>Light</button>
-				<button onClick={e => this.handleBody(e)}>Balanced</button>
-				<button onClick={e => this.handleBody(e)}>Full</button>
+				<button className="search-btn" onClick={e => this.handleBody(e)}>
+					Light
+				</button>
+				<button className="search-btn" onClick={e => this.handleBody(e)}>
+					Balanced
+				</button>
+				<button className="search-btn" onClick={e => this.handleBody(e)}>
+					Full
+				</button>
+				{this.state.searchResults.length > 0 ? (
+					<SearchResult searchResults={this.state.searchResults} />
+				) : (
+					''
+				)}
 			</div>
 		)
 	}
