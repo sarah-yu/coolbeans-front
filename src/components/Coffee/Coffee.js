@@ -265,6 +265,7 @@ class Coffee extends Component {
 							imgUrl={this.state.imgUrl}
 							description={this.state.description}
 							handleNameInput={this.handleNameInput}
+							handleImgInput={this.handleImgInput}
 							handleRegionInput={this.handleRegionInput}
 							handleCountryInput={this.handleCountryInput}
 							handleDescriptionInput={this.handleDescriptionInput}
