@@ -34,7 +34,7 @@ const Welcome = () => (
 		<div className="welcome-row">
 			<div className="welcome-row-writing">
 				<h3> See our full coffee bean catalogue </h3>
-				<Link to="/resources">
+				<Link to="/coffees">
 					<button className="btn">Show All</button>
 				</Link>
 			</div>
