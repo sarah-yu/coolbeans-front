@@ -36,7 +36,7 @@ class CoffeeList extends Component {
 						</div>
 						<h2>
 							{coffee.name}{' '}
-							<span class="coffee-notes">
+							<span className="coffee-notes">
 								{coffee.flavorProfile[0].notes.isFruity ? 'Fruity ' : ''}
 								{coffee.flavorProfile[0].notes.isSour ? 'Sour ' : ''}
 								{coffee.flavorProfile[0].notes.isVeggie ? 'Earthy ' : ''}

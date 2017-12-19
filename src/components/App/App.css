@@ -18,6 +18,26 @@ img {
 	width: 100%;
 }
 
+button,
+.btn {
+	background-color: #fff;
+	border: 1px solid #888;
+	border-radius: 0;
+	color: #333;
+	cursor: pointer;
+	font-family: 'Raleway', sans-serif;
+	font-size: 14px;
+	letter-spacing: 0.9px;
+	outline: none;
+	padding: 10px 20px;
+	width: 120px;
+}
+
+.btn:hover {
+	background-color: #333;
+	color: #fff;
+}
+
 a {
 	color: #222;
 	text-decoration: none;
