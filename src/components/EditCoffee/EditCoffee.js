@@ -152,6 +152,7 @@ class EditCoffee extends Component {
 								onChange={this.props.handleFloral}
 							/>
 						</p>
+						<input type="submit" />
 					</form>
 				</div>
 			</div>
