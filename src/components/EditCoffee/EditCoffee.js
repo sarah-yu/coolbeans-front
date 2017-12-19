@@ -92,7 +92,7 @@ class EditCoffee extends Component {
 										type="text"
 										name="acidity"
 										className="form-field"
-										value={this.body.acidity}
+										value={this.props.acidity}
 										onChange={this.props.handleAcidity}
 									/>
 								</div>
