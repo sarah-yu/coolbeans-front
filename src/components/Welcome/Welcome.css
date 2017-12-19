@@ -1,8 +1,47 @@
 #welcome-img {
-	height: 400px;
-	width: 400px;
+	height: 300px;
+	width: 360px;
+	float: right;
+	margin-right: 200px;
 }
 
 .welcome {
-	border-width: thick;
+	display: flex;
+	flex-direction: column;
+	/*justify-content: space-around;
+	align-content: space-around;*/
+}
+
+.welcome-row {
+	/*border: 1px solid black;*/
+	position: relative;
+
+	background-color: #a06d38;
+	height: 300px;
+	width: 100%;
+
+	margin-bottom: 10px;
+	/*flex: none;
+
+	display: flex;*/
+}
+
+.welcome-row-writing {
+	display: flex;
+	flex-direction: column;
+	/*border: 1px solid black;*/
+	/*margin-right: 200px;*/
+	text-align: center;
+	justify-content: center;
+	float: left;
+	margin-left: 20px;
+	padding-left: 50px;
+	height: 200px;
+	width: 400px;
+}
+
+h3 {
+	color: #d3d3d3;
+	font-size: 28px;
+	text-align: center;
 }

@@ -8,16 +8,16 @@ const Header = () => (
 		<Link to="/">
 			<img
 				className="logo"
-				src="https://i.imgur.com/kbYVG9n.png"
+				src="https://i.imgur.com/Xawn3K0.png"
 				alt="Coolbeans Logo"
 			/>
 		</Link>
 		<nav>
 			<Link to="/">Home</Link>
-			<Link to="/resources">Resources</Link>
-			<Link to="/coffees">View Coffees</Link>
-			<Link to="/search">Search</Link>
-			<Link to="/new-coffee">New Coffee</Link>
+			<Link to="/resources">Learn</Link>
+			<Link to="/coffees">Show All Coffees</Link>
+			<Link to="/search">Discover</Link>
+			<Link to="/new-coffee">Add a New Coffee</Link>
 		</nav>
 	</header>
 )

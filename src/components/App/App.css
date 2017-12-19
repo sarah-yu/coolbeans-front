@@ -1,6 +1,7 @@
 html {
 	box-sizing: border-box;
 	height: 100%;
+	background-color: #f5ece1;
 }
 
 *,
@@ -34,8 +35,8 @@ button,
 }
 
 .btn:hover {
-	background-color: #333;
-	color: #fff;
+	background-color: #4ab0e3;
+	color: black;
 }
 
 a {
