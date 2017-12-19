@@ -8,7 +8,7 @@ const Welcome = () => (
 		<div className="welcome-row">
 			<div className="welcome-row-writing">
 				<h3> Find a coffee to match your tastes... </h3>
-				<Link to="/search">
+				<Link to="/discover">
 					<button className="btn">Discover</button>
 				</Link>
 			</div>

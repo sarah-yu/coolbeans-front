@@ -3,7 +3,7 @@ import { Route, Redirect, Switch } from 'react-router-dom'
 
 import Welcome from '../Welcome/Welcome'
 import Header from '../Header/Header'
-import Search from '../Search/Search'
+import Discover from '../Discover/Discover'
 import CoffeeList from '../CoffeeList/CoffeeList'
 import Resource from '../Resource/Resource'
 import Coffee from '../Coffee/Coffee'
@@ -45,8 +45,8 @@ class App extends Component {
 						/>
 						<Route
 							exact
-							path="/search"
-							render={props => <Search {...props} />}
+							path="/discover"
+							render={props => <Discover {...props} />}
 						/>
 						<Route path="/*" render={() => <Redirect to="/welcome" />} />
 					</Switch>
