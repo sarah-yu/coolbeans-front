@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { withRouter } from 'react-router-dom'
+import '../NewCoffee/NewCoffee.css'
 
 class EditCoffee extends Component {
 	render() {
@@ -57,6 +58,7 @@ class EditCoffee extends Component {
 								onChange={this.props.handleDescriptionInput}
 							/>
 						</p>
+						<input type="submit" />
 					</form>
 				</div>
 

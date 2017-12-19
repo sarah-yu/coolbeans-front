@@ -150,7 +150,7 @@ class Coffee extends Component {
 	}
 
 	handleFormSubmit(e) {
-		e.preventDefault
+		e.preventDefault()
 
 		axios
 			.put(`http://localhost:3001/coffees/${this.state.coffee._id}`, {
