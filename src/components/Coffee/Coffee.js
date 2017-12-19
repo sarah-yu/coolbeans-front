@@ -190,28 +190,28 @@ class Coffee extends Component {
 		console.log('form was submitted')
 
 		axios
-			.put(`http://localhost:3001/coffees/${this.state.coffee._id}`, {
+			.put(`http://localhost:3001/coffees/${this.state._id}`, {
 				name: this.state.name,
 				region: this.state.region,
 				country: this.state.country,
 				imgUrl: this.state.imgUrl,
 				description: this.state.description,
 
-				acidity: this.state.flavorProfile.acidity,
-				body: this.state.flavorProfile.body,
-				isWeird: this.state.flavorProfile.isWeird,
-				isFloral: this.state.flavorProfile.isFloral,
-				isSweet: this.state.flavorProfile.isSweet,
-				isNuttyCocoa: this.state.flavorProfile.isNuttyCocoa,
-				isSpicy: this.state.flavorProfile.isSpicy,
-				isRoasted: this.state.flavorProfile.isRoasted,
-				isVeggie: this.state.flavorProfile.isVeggie,
-				isSour: this.state.flavorProfile.isSour,
-				isFruity: this.state.flavorProfile.isFruity
+				acidity: this.state.acidity,
+				body: this.state.body,
+				isWeird: this.state.isWeird,
+				isFloral: this.state.isFloral,
+				isSweet: this.state.isSweet,
+				isNuttyCocoa: this.state.isNuttyCocoa,
+				isSpicy: this.state.isSpicy,
+				isRoasted: this.state.isRoasted,
+				isVeggie: this.state.isVeggie,
+				isSour: this.state.isSour,
+				isFruity: this.state.isFruity
 			})
 			.then(response => {
 				console.log(response)
-				this.props.history.push(`/coffees/${this.state.coffee._id}`)
+				this.props.history.push(`/coffees/${response._id}`)
 				console.log('Updated!')
 			})
 			.catch(err => console.log(err))
