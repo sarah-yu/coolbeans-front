@@ -55,6 +55,40 @@ class Coffee extends Component {
 		this.handleFormSubmit = this.handleFormSubmit.bind(this)
 	}
 
+	componentDidMount() {
+		axios
+			.get(`http://localhost:3001/coffees/${this.props.match.params._id}`)
+			.then(res => {
+				console.log(res.data)
+
+				let flavorProfile = res.data.flavorProfile[0]
+
+				this.setState({
+					id: res.data._id,
+					name: res.data.name,
+					region: res.data.region,
+					country: res.data.country,
+					imgUrl: res.data.imgUrl,
+					description: res.data.description,
+
+					acidity: flavorProfile.acidity,
+					body: flavorProfile.body,
+					isWeird: flavorProfile.notes.isWeird,
+					isFloral: flavorProfile.notes.isFloral,
+					isSweet: flavorProfile.notes.isSweet,
+					isNuttyCocoa: flavorProfile.notes.isNuttyCocoa,
+					isSpicy: flavorProfile.notes.isSpicy,
+					isRoasted: flavorProfile.notes.isRoasted,
+					isVeggie: flavorProfile.notes.isVeggie,
+					isSour: flavorProfile.notes.isSour,
+					isFruity: flavorProfile.notes.isFruity
+				})
+			})
+			.catch(err => {
+				console.log(err)
+			})
+	}
+
 	handleNameInput(e) {
 		this.setState({
 			name: e.target.value
@@ -153,6 +187,7 @@ class Coffee extends Component {
 
 	handleFormSubmit(e) {
 		e.preventDefault()
+		console.log('form was submitted')
 
 		axios
 			.put(`http://localhost:3001/coffees/${this.state.coffee._id}`, {
@@ -184,40 +219,6 @@ class Coffee extends Component {
 		this.setState({
 			editClicked: false
 		})
-	}
-
-	componentDidMount() {
-		axios
-			.get(`http://localhost:3001/coffees/${this.props.match.params._id}`)
-			.then(res => {
-				console.log(res.data)
-
-				let flavorProfile = res.data.flavorProfile[0]
-
-				this.setState({
-					id: res.data._id,
-					name: res.data.name,
-					region: res.data.region,
-					country: res.data.country,
-					imgUrl: res.data.imgUrl,
-					description: res.data.description,
-
-					acidity: flavorProfile.acidity,
-					body: flavorProfile.body,
-					isWeird: flavorProfile.notes.isWeird,
-					isFloral: flavorProfile.notes.isFloral,
-					isSweet: flavorProfile.notes.isSweet,
-					isNuttyCocoa: flavorProfile.notes.isNuttyCocoa,
-					isSpicy: flavorProfile.notes.isSpicy,
-					isRoasted: flavorProfile.notes.isRoasted,
-					isVeggie: flavorProfile.notes.isVeggie,
-					isSour: flavorProfile.notes.isSour,
-					isFruity: flavorProfile.notes.isFruity
-				})
-			})
-			.catch(err => {
-				console.log(err)
-			})
 	}
 
 	deleteCoffee() {
