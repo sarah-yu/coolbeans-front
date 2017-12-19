@@ -18,6 +18,7 @@ class Discover extends Component {
 		}
 
 		this.handleBody = this.handleBody.bind(this)
+		this.handleAcidity = this.handleAcidity.bind(this)
 	}
 
 	componentDidMount() {
@@ -32,30 +33,41 @@ class Discover extends Component {
 	}
 
 	handleBody(e) {
-		this.setState({
-			bodyClicked: true,
-			body: e.target.innerHTML
-		})
-
-		// this.getCoffees(body)
+		this.setState(
+			{
+				bodyClicked: true,
+				body: e.target.innerHTML
+			},
+			this.getCoffees
+		)
 	}
 
 	handleAcidity(e) {
-		this.setState({
-			acidityClicked: true,
-			acidity: e.target.innerHTML
-		})
-
-		// this.getCoffees(acidity)
+		this.setState(
+			{
+				acidityClicked: true,
+				acidity: e.target.innerHTML
+			},
+			this.getCoffees
+		)
 	}
 
-	getCoffees(flavorProfileProp) {
+	getCoffees() {
 		let results = this.state.coffees.filter(coffee => {
 			let flavorProfile = coffee.flavorProfile[0]
 
-			return flavorProfile.flavorProfileProp === this.state.flavorProfileProp
+			if (this.state.body && this.state.acidity) {
+				return (
+					flavorProfile.body === this.state.body &&
+					flavorProfile.acidity === this.state.acidity
+				)
+			} else {
+				return flavorProfile.body === this.state.body
+			}
 		})
 
+		console.log(this.state.body)
+		console.log(this.state.acidity)
 		console.log(results)
 
 		this.setState({
@@ -84,6 +96,12 @@ class Discover extends Component {
 					criteriaName="Body"
 					criteria={bodyCriteria}
 					handleCriteria={this.handleBody}
+				/>
+
+				<DiscoverCriteria
+					criteriaName="Acidity"
+					criteria={acidityCriteria}
+					handleCriteria={this.handleAcidity}
 				/>
 
 				{this.state.discoverResults.length > 0 ? (

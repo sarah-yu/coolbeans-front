@@ -4,9 +4,10 @@ import './DiscoverCriteria.css'
 
 class DiscoverCriteria extends Component {
 	render() {
-		let buttons = this.props.criteria.forEach(criterion => {
+		let buttons = this.props.criteria.map((criterion, index) => {
 			return (
 				<button
+					key={index}
 					className="discover-btn"
 					onClick={e => this.props.handleCriteria(e)}
 				>
