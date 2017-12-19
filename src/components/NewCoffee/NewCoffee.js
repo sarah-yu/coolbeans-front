@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 import axios from 'axios'
 
+import './NewCoffee.css'
+
 class NewCoffee extends Component {
 	constructor(props) {
 		super(props)
@@ -185,152 +187,169 @@ class NewCoffee extends Component {
 
 	render() {
 		return (
-			<div className="newCoffeeForm">
-				<h1>
+			<div className="form-container">
+				<h2>
 					We are always looking to expand our palette; add a new coffee below!
-				</h1>
+				</h2>
 
-				<form onSubmit={e => this.handleSubmitInput(e)}>
-					<p>
-						<label>Name:</label>
-						<br />
-						<input
-							type="text"
-							name="name"
-							onChange={e => this.handleNameInput(e)}
-						/>
-					</p>
+				<div className="the-form">
+					<form onSubmit={e => this.handleSubmitInput(e)}>
+						<div className="form-sides">
+							<div className="form-left">
+								<div className="form-section">
+									<label className="form-section-heading">Coffee</label>
+								</div>
+								<div className="form-section">
+									<label>Name:</label>
+									<br />
+									<input
+										type="text"
+										name="name"
+										className="form-field"
+										onChange={e => this.handleNameInput(e)}
+									/>
+								</div>
 
-					<p>
-						<label>Region:</label>
-						<br />
-						<input
-							type="text"
-							name="region"
-							onChange={e => this.handleRegionInput(e)}
-						/>
-					</p>
+								<div className="form-section">
+									<label>Region:</label>
+									<br />
+									<input
+										type="text"
+										name="region"
+										className="form-field"
+										onChange={e => this.handleRegionInput(e)}
+									/>
+								</div>
 
-					<p>
-						<label>Country:</label>
-						<br />
-						<input
-							type="text"
-							name="country"
-							onChange={e => this.handleCountryInput(e)}
-						/>
-					</p>
+								<div className="form-section">
+									<label>Country:</label>
+									<br />
+									<input
+										type="text"
+										name="country"
+										className="form-field"
+										onChange={e => this.handleCountryInput(e)}
+									/>
+								</div>
 
-					<p>
-						<label>Image Url:</label>
-						<br />
-						<input
-							type="text"
-							name="imageUrl"
-							onChange={e => this.handleImgInput(e)}
-						/>
-					</p>
+								<div className="form-section">
+									<label>Image Url:</label>
+									<br />
+									<input
+										type="text"
+										name="imageUrl"
+										className="form-field"
+										onChange={e => this.handleImgInput(e)}
+									/>
+								</div>
 
-					<p>
-						<label>Description:</label>
-						<br />
-						<textarea
-							name="description"
-							onChange={e => this.handleDescriptionInput(e)}
-						/>
-					</p>
+								<div className="form-section">
+									<label>Description:</label>
+									<br />
+									<textarea
+										name="description"
+										className="form-field"
+										onChange={e => this.handleDescriptionInput(e)}
+									/>
+								</div>
+							</div>
 
-					<p>
-						<label>Flavor Profile</label>
-					</p>
+							<div className="form-right">
+								<div className="form-section">
+									<label className="form-section-heading">Flavor Profile</label>
+								</div>
 
-					<p>
-						<label>Body:</label>
-						<br />
-						<input
-							type="text"
-							name="body"
-							placeholder="Light, Balanced, or Full"
-							onChange={e => this.handleBody(e)}
-						/>
-					</p>
+								<div className="form-section">
+									<label>Body:</label>
+									<br />
+									<input
+										type="text"
+										name="body"
+										className="form-field"
+										placeholder="Light, Balanced, or Full"
+										onChange={e => this.handleBody(e)}
+									/>
+								</div>
 
-					<p>
-						<label>Acidity:</label>
-						<br />
-						<input
-							type="text"
-							name="acidity"
-							placeholder="Low, Medium, or High"
-							onChange={e => this.handleAcidity(e)}
-						/>
-					</p>
+								<div className="form-section">
+									<label>Acidity:</label>
+									<br />
+									<input
+										type="text"
+										name="acidity"
+										className="form-field"
+										placeholder="Low, Medium, or High"
+										onChange={e => this.handleAcidity(e)}
+									/>
+								</div>
 
-					<p>
-						<label>Notes</label>
-					</p>
+								<div className="form-section">
+									<label>Notes:</label>
+								</div>
 
-					<p>
-						<input
-							type="checkbox"
-							name="isFruity"
-							onChange={e => this.handleFruity(e)}
-						/>{' '}
-						Fruity<br />
-						<input
-							type="checkbox"
-							name="isSour"
-							onChange={e => this.handleSour(e)}
-						/>{' '}
-						Sour / Fermented<br />
-						<input
-							type="checkbox"
-							name="isVeggie"
-							onChange={e => this.handleVeggie(e)}
-						/>{' '}
-						Earthy / Green<br />
-						<input
-							type="checkbox"
-							name="isRoasted"
-							onChange={e => this.handleRoasted(e)}
-						/>{' '}
-						Roasted<br />
-						<input
-							type="checkbox"
-							name="isSpicy"
-							onChange={e => this.handleSpicy(e)}
-						/>{' '}
-						Spicy<br />
-						<input
-							type="checkbox"
-							name="isNuttyCocoa"
-							onChange={e => this.handleNuttyCocoa(e)}
-						/>{' '}
-						Nutty / Chocolatey<br />
-						<input
-							type="checkbox"
-							name="isSweet"
-							onChange={e => this.handleSweet(e)}
-						/>{' '}
-						Sweet<br />
-						<input
-							type="checkbox"
-							name="isFloral"
-							onChange={e => this.handleFloral(e)}
-						/>{' '}
-						Floral<br />
-						<input
-							type="checkbox"
-							name="isWeird"
-							onChange={e => this.handleWeird(e)}
-						/>{' '}
-						Weird<br />
-					</p>
-
-					<p>
-						<input type="submit" />
-					</p>
-				</form>
+								<div className="form-section">
+									<input
+										type="checkbox"
+										name="isFruity"
+										onChange={e => this.handleFruity(e)}
+									/>{' '}
+									Fruity<br />
+									<input
+										type="checkbox"
+										name="isSour"
+										onChange={e => this.handleSour(e)}
+									/>{' '}
+									Sour / Fermented<br />
+									<input
+										type="checkbox"
+										name="isVeggie"
+										onChange={e => this.handleVeggie(e)}
+									/>{' '}
+									Earthy / Green<br />
+									<input
+										type="checkbox"
+										name="isRoasted"
+										onChange={e => this.handleRoasted(e)}
+									/>{' '}
+									Roasted<br />
+									<input
+										type="checkbox"
+										name="isSpicy"
+										onChange={e => this.handleSpicy(e)}
+									/>{' '}
+									Spicy<br />
+									<input
+										type="checkbox"
+										name="isNuttyCocoa"
+										onChange={e => this.handleNuttyCocoa(e)}
+									/>{' '}
+									Nutty / Chocolatey<br />
+									<input
+										type="checkbox"
+										name="isSweet"
+										onChange={e => this.handleSweet(e)}
+									/>{' '}
+									Sweet<br />
+									<input
+										type="checkbox"
+										name="isFloral"
+										onChange={e => this.handleFloral(e)}
+									/>{' '}
+									Floral<br />
+									<input
+										type="checkbox"
+										name="isWeird"
+										onChange={e => this.handleWeird(e)}
+									/>{' '}
+									Weird<br />
+								</div>
+							</div>
+						</div>
+						<div className="form-section form-submit-btn">
+							<input type="submit" className="btn" />
+						</div>
+					</form>
+				</div>
 			</div>
 		)
 	}
