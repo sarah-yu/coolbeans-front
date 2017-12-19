@@ -240,7 +240,11 @@ class Coffee extends Component {
 	render() {
 		return (
 			<div>
-				<img src={this.state.imgUrl} alt={this.state.name} />
+				<img
+					className="coffee-img"
+					src={this.state.imgUrl}
+					alt={this.state.name}
+				/>
 				<h2>Country: {this.state.country}</h2>
 				<h3>Region: {this.state.region}</h3>
 				<p>Description: {this.state.description}</p>

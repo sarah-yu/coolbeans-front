@@ -5,6 +5,13 @@
 	margin-right: 200px;
 }
 
+#img2 {
+	height: 300px;
+	width: 360px;
+	float: left;
+	margin-left: 200px;
+}
+
 .welcome {
 	display: flex;
 	flex-direction: column;
@@ -20,7 +27,7 @@
 	height: 300px;
 	width: 100%;
 
-	margin-bottom: 10px;
+	margin-bottom: 5px;
 	/*flex: none;
 
 	display: flex;*/
@@ -36,11 +43,20 @@
 	float: left;
 	margin-left: 20px;
 	padding-left: 50px;
+	padding-top: 55px;
 	height: 200px;
 	width: 400px;
 }
 
-h3 {
+#row1 {
+	background-color: #d6a168;
+}
+
+#row3 {
+	background-color: #c1996e;
+}
+
+.welcome-h3 {
 	color: #d3d3d3;
 	font-size: 28px;
 	text-align: center;
