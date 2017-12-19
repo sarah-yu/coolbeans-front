@@ -51,6 +51,8 @@ class Coffee extends Component {
 		this.handleSweet = this.handleSweet.bind(this)
 		this.handleFloral = this.handleFloral.bind(this)
 		this.handleWeird = this.handleWeird.bind(this)
+
+		this.handleFormSubmit = this.handleFormSubmit.bind(this)
 	}
 
 	handleNameInput(e) {

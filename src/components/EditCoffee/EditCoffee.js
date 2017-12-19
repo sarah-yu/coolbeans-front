@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { withRouter } from 'react-router-dom'
 import '../NewCoffee/NewCoffee.css'
+import Coffee from '../Coffee/Coffee'
 
 class EditCoffee extends Component {
 	render() {
@@ -80,7 +81,7 @@ class EditCoffee extends Component {
 										type="text"
 										name="body"
 										className="form-field"
-										value="body"
+										value={this.props.body}
 										onChange={this.props.handleBody}
 									/>
 								</div>
@@ -91,7 +92,7 @@ class EditCoffee extends Component {
 										type="text"
 										name="acidity"
 										className="form-field"
-										value="acidity"
+										value={this.body.acidity}
 										onChange={this.props.handleAcidity}
 									/>
 								</div>
