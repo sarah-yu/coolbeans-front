@@ -175,7 +175,7 @@ class NewCoffee extends Component {
 		}
 
 		axios
-			.post('http://localhost:3001/coffees', newCoffee)
+			.post('https://cool-beans-api.herokuapp.com/coffees', newCoffee)
 			.then(response => {
 				console.log(response)
 				this.props.history.push('/coffees')

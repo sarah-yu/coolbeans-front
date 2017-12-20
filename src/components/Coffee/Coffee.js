@@ -193,7 +193,7 @@ class Coffee extends Component {
 		console.log('form was submitted')
 
 		axios
-			.put(`http://localhost:3001/coffees/${this.state._id}`, {
+			.put(`https://cool-beans-api.herokuapp.com/coffees/${this.state._id}`, {
 				name: this.state.name,
 				region: this.state.region,
 				country: this.state.country,
@@ -226,7 +226,10 @@ class Coffee extends Component {
 
 	deleteCoffee() {
 		axios
-			.delete(`http://localhost:3001/coffees/${this.props.match.params._id}`)
+			.delete(
+				`https://cool-beans-api.herokuapp.com/coffees/${this.props.match.params
+					._id}`
+			)
 			.then(res => {
 				console.log(`${this.state.name} coffee was deleted.`)
 				this.props.history.push('/coffees')
