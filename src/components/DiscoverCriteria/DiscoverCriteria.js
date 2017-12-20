@@ -19,7 +19,7 @@ class DiscoverCriteria extends Component {
 		return (
 			<div className="discover-criteria">
 				<h2>{this.props.criteriaName}</h2>
-				{buttons}
+				<div className="discover-criteria-buttons">{buttons}</div>
 			</div>
 		)
 	}
