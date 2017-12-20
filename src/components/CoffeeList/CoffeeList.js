@@ -4,6 +4,8 @@ import { Link } from 'react-router-dom'
 
 import './CoffeeList.css'
 
+import { getCoffees } from '../../services/coffee'
+
 class CoffeeList extends Component {
 	constructor(props) {
 		super(props)
@@ -11,19 +13,12 @@ class CoffeeList extends Component {
 		this.state = {
 			coffees: []
 		}
+
+		this.getCoffees = getCoffees.bind(this)
 	}
 
 	componentDidMount() {
-		axios
-			.get('https://cool-beans-api.herokuapp.com/coffees')
-			.then(response => {
-				this.setState({
-					coffees: response.data
-				})
-			})
-			.catch(err => {
-				console.log(err)
-			})
+		this.getCoffees()
 	}
 
 	render() {

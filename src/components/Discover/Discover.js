@@ -6,6 +6,8 @@ import './Discover.css'
 import DiscoverCriteria from '../DiscoverCriteria/DiscoverCriteria'
 import DiscoverResult from '../DiscoverResult/DiscoverResult'
 
+import { getCoffees } from '../../services/coffee'
+
 class Discover extends Component {
 	constructor(props) {
 		super(props)
@@ -23,17 +25,11 @@ class Discover extends Component {
 		this.handleBody = this.handleBody.bind(this)
 		this.handleAcidity = this.handleAcidity.bind(this)
 		this.handleNotes = this.handleNotes.bind(this)
+		this.getCoffees = getCoffees.bind(this)
 	}
 
 	componentDidMount() {
-		axios
-			.get('https://cool-beans-api.herokuapp.com/coffees')
-			.then(res => {
-				this.setState({
-					coffees: res.data
-				})
-			})
-			.catch(err => console.log(err))
+		this.getCoffees()
 	}
 
 	handleBody(e) {
@@ -42,7 +38,7 @@ class Discover extends Component {
 				bodyClicked: true,
 				body: e.target.innerHTML
 			},
-			this.getCoffees
+			this.filterCoffees
 		)
 	}
 
@@ -52,17 +48,18 @@ class Discover extends Component {
 				acidityClicked: true,
 				acidity: e.target.innerHTML
 			},
-			this.getCoffees
+			this.filterCoffees
 		)
 	}
 
 	handleNotes(e) {
+		console.log(e.target.dataset.notes)
 		if (e.target.innerHTML === 'Spicy') {
 			this.setState(
 				{
 					isSpicy: true
 				},
-				this.getCoffees
+				this.filterCoffees
 			)
 		}
 
@@ -73,7 +70,7 @@ class Discover extends Component {
 		}
 	}
 
-	getCoffees() {
+	filterCoffees() {
 		let results = this.state.coffees.filter(coffee => {
 			let flavorProfile = coffee.flavorProfile[0]
 
@@ -99,18 +96,26 @@ class Discover extends Component {
 	}
 
 	render() {
-		const bodyCriteria = ['Light', 'Balanced', 'Full']
-		const acidityCriteria = ['Low', 'Medium', 'High']
+		const bodyCriteria = [
+			{ Light: 'Light' },
+			{ Balanced: 'Balanced' },
+			{ Full: 'Full' }
+		]
+		const acidityCriteria = [
+			{ Low: 'Low' },
+			{ Medium: 'Medium' },
+			{ High: 'High' }
+		]
 		const notesCriteria = [
-			'Fruity',
-			'Sour',
-			'Earthy',
-			'Roasted',
-			'Spicy',
-			'Nutty / Chocolatey',
-			'Sweet',
-			'Floral',
-			'Weird'
+			{ Fruity: 'isFruity' },
+			{ Sour: 'isSour' },
+			{ Earthy: 'isVeggie' },
+			{ Roasted: 'isRoasted' },
+			{ Spicy: 'isSpicy' },
+			{ 'Nutty / Chocolatey': 'isNuttyCocoa' },
+			{ Sweet: 'isSweet' },
+			{ Floral: 'isFloral' },
+			{ Weird: 'isWeird' }
 		]
 
 		return (
