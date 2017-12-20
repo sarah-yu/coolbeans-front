@@ -4,6 +4,8 @@ import axios from 'axios'
 import FlavorProfile from '../FlavorProfile/FlavorProfile'
 import EditCoffee from '../EditCoffee/EditCoffee'
 
+import { getCoffee, removeCoffee } from '../../services/coffee'
+
 class Coffee extends Component {
 	constructor() {
 		super()
@@ -53,43 +55,13 @@ class Coffee extends Component {
 		this.handleWeird = this.handleWeird.bind(this)
 
 		this.handleFormSubmit = this.handleFormSubmit.bind(this)
+
+		this.getCoffee = getCoffee.bind(this)
+		this.removeCoffee = removeCoffee.bind(this)
 	}
 
 	componentDidMount() {
-		axios
-			.get(
-				`https://cool-beans-api.herokuapp.com/coffees/${this.props.match.params
-					._id}`
-			)
-			.then(res => {
-				console.log(res.data)
-
-				let flavorProfile = res.data.flavorProfile[0]
-
-				this.setState({
-					id: res.data._id,
-					name: res.data.name,
-					region: res.data.region,
-					country: res.data.country,
-					imgUrl: res.data.imgUrl,
-					description: res.data.description,
-
-					acidity: flavorProfile.acidity,
-					body: flavorProfile.body,
-					isWeird: flavorProfile.notes.isWeird,
-					isFloral: flavorProfile.notes.isFloral,
-					isSweet: flavorProfile.notes.isSweet,
-					isNuttyCocoa: flavorProfile.notes.isNuttyCocoa,
-					isSpicy: flavorProfile.notes.isSpicy,
-					isRoasted: flavorProfile.notes.isRoasted,
-					isVeggie: flavorProfile.notes.isVeggie,
-					isSour: flavorProfile.notes.isSour,
-					isFruity: flavorProfile.notes.isFruity
-				})
-			})
-			.catch(err => {
-				console.log(err)
-			})
+		this.getCoffee(this.props.match.params._id)
 	}
 
 	handleNameInput(e) {
@@ -225,16 +197,7 @@ class Coffee extends Component {
 	}
 
 	deleteCoffee() {
-		axios
-			.delete(
-				`https://cool-beans-api.herokuapp.com/coffees/${this.props.match.params
-					._id}`
-			)
-			.then(res => {
-				console.log(`${this.state.name} coffee was deleted.`)
-				this.props.history.push('/coffees')
-			})
-			.catch(err => console.log(err))
+		this.removeCoffee(this.props.match.params._id)
 	}
 
 	editCoffee() {

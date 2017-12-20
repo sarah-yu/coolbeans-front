@@ -5,13 +5,15 @@ import './DiscoverCriteria.css'
 class DiscoverCriteria extends Component {
 	render() {
 		let buttons = this.props.criteria.map((criterion, index) => {
+			console.log(this.props.criteria.constructor)
 			return (
 				<button
 					key={index}
+					data-notes={Object.values(criterion)}
 					className="discover-btn"
 					onClick={e => this.props.handleCriteria(e)}
 				>
-					{criterion}
+					{Object.keys(criterion)}
 				</button>
 			)
 		})

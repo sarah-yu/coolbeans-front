@@ -3,6 +3,8 @@ import axios from 'axios'
 
 import './NewCoffee.css'
 
+import { createCoffee } from '../../services/coffee'
+
 class NewCoffee extends Component {
 	constructor(props) {
 		super(props)
@@ -46,6 +48,8 @@ class NewCoffee extends Component {
 		this.handleSweet = this.handleSweet.bind(this)
 		this.handleFloral = this.handleFloral.bind(this)
 		this.handleWeird = this.handleWeird.bind(this)
+
+		this.createCoffee = createCoffee.bind(this)
 	}
 
 	handleNameInput(e) {
@@ -174,15 +178,7 @@ class NewCoffee extends Component {
 			flavorProfile: [newFlavorProfile]
 		}
 
-		axios
-			.post('https://cool-beans-api.herokuapp.com/coffees', newCoffee)
-			.then(response => {
-				console.log(response)
-				this.props.history.push('/coffees')
-			})
-			.catch(err => {
-				console.log(err)
-			})
+		this.createCoffee(newCoffee)
 	}
 
 	render() {
