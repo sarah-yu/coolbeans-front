@@ -15,7 +15,7 @@ class CoffeeList extends Component {
 
 	componentDidMount() {
 		axios
-			.get('http://localhost:3001/coffees')
+			.get('https://cool-beans-api.herokuapp.com/coffees')
 			.then(response => {
 				this.setState({
 					coffees: response.data

@@ -57,7 +57,10 @@ class Coffee extends Component {
 
 	componentDidMount() {
 		axios
-			.get(`http://localhost:3001/coffees/${this.props.match.params._id}`)
+			.get(
+				`https://cool-beans-api.herokuapp.com/coffees/${this.props.match.params
+					._id}`
+			)
 			.then(res => {
 				console.log(res.data)
 
@@ -240,7 +243,9 @@ class Coffee extends Component {
 	render() {
 		return (
 			<div>
-				<img src={this.state.imgUrl} alt={this.state.name} />
+				<div className="coffee-img">
+					<img src={this.state.imgUrl} alt={this.state.name} />
+				</div>
 				<h2>Country: {this.state.country}</h2>
 				<h3>Region: {this.state.region}</h3>
 				<p>Description: {this.state.description}</p>
