@@ -65,15 +65,6 @@ class Discover extends Component {
 	}
 
 	handleNotes(e) {
-		// this.state.findNotes.push(e.target.dataset.notes)
-
-		// this.setState(
-		// 	{
-		// 		[e.target.dataset.notes]: true
-		// 	},
-		// 	this.filterCoffeesByNotes
-		// )
-
 		let selectedNote = e.target.dataset.notes
 
 		if (e.target.style.backgroundColor !== 'skyblue') {
@@ -104,13 +95,7 @@ class Discover extends Component {
 	}
 
 	filterCoffeesByNotes() {
-		console.log(this.state.findNotes)
-		// console.log('filtering by notes')
-		// console.log(this.state.discoverResults)
-
 		let results = []
-
-		console.log(this.state.tempResults)
 
 		for (let i = 0; i < this.state.tempResults.length; i++) {
 			let coffee = this.state.tempResults[i]
@@ -122,7 +107,6 @@ class Discover extends Component {
 
 				if (flavorProfile.notes[note]) {
 					matchNotes++
-					// results.push(coffee)
 				}
 			}
 
@@ -130,9 +114,6 @@ class Discover extends Component {
 				results.push(coffee)
 			}
 		}
-
-		console.log('RESULTS')
-		console.log(results)
 
 		this.setState({
 			discoverResults: results

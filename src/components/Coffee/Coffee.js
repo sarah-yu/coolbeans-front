@@ -4,6 +4,8 @@ import axios from 'axios'
 import FlavorProfile from '../FlavorProfile/FlavorProfile'
 import EditCoffee from '../EditCoffee/EditCoffee'
 
+import './Coffee.css'
+
 import { getCoffee, removeCoffee, updateCoffee } from '../../services/coffee'
 
 class Coffee extends Component {
@@ -132,8 +134,10 @@ class Coffee extends Component {
 				<h3>Region: {this.state.coffee.region}</h3>
 				<p>Description: {this.state.coffee.description}</p>
 				<FlavorProfile profiles={this.state.coffee.flavorProfile} />
-				<button onClick={this.deleteCoffee}>Delete</button>
-				<button onClick={this.editCoffee}>Edit</button>
+				<div className="edit-delete-coffee-btns">
+					<button onClick={this.deleteCoffee}>Delete</button>
+					<button onClick={this.editCoffee}>Edit</button>
+				</div>
 				{this.state.editClicked ? (
 					<div className="edit-coffee">
 						<EditCoffee
