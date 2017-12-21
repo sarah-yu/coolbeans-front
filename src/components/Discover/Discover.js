@@ -16,9 +16,20 @@ class Discover extends Component {
 			coffees: [],
 			bodyClicked: false,
 			acidityClicked: false,
+			notesClicked: false,
 			body: '',
 			acidity: '',
+			isFloral: false,
+			isFruity: false,
+			isNuttyCocoa: false,
+			isRoasted: false,
+			isSour: false,
 			isSpicy: false,
+			isSweet: false,
+			isVeggie: false,
+			isWeird: false,
+			findNotes: [],
+			tempResults: [], // results from body and acidity filter
 			discoverResults: []
 		}
 
@@ -53,34 +64,85 @@ class Discover extends Component {
 	}
 
 	handleNotes(e) {
-		console.log(e.target.dataset.notes)
-		if (e.target.innerHTML === 'Spicy') {
-			this.setState(
-				{
-					isSpicy: true
-				},
-				this.filterCoffees
-			)
-		}
+		// this.state.findNotes.push(e.target.dataset.notes)
+
+		// this.setState(
+		// 	{
+		// 		[e.target.dataset.notes]: true
+		// 	},
+		// 	this.filterCoffeesByNotes
+		// )
+
+		let selectedNote = e.target.dataset.notes
 
 		if (e.target.style.backgroundColor !== 'red') {
 			e.target.style.backgroundColor = 'red'
+
+			if (this.state.findNotes.indexOf(selectedNote) < 0) {
+				this.state.findNotes.push(selectedNote)
+			}
+
+			this.setState(
+				{
+					[selectedNote]: true
+				},
+				this.filterCoffeesByNotes
+			)
 		} else {
 			e.target.style.backgroundColor = 'white'
+
+			this.state.findNotes.splice(this.state.findNotes.indexOf(selectedNote), 1)
+
+			this.setState(
+				{
+					[selectedNote]: false
+				},
+				this.filterCoffeesByNotes
+			)
 		}
+	}
+
+	filterCoffeesByNotes() {
+		console.log(this.state.findNotes)
+		// console.log('filtering by notes')
+		// console.log(this.state.discoverResults)
+
+		let results = []
+
+		console.log(this.state.tempResults)
+
+		for (let i = 0; i < this.state.tempResults.length; i++) {
+			let coffee = this.state.tempResults[i]
+			let matchNotes = 0
+			for (let j = 0; j < this.state.findNotes.length; j++) {
+				let note = this.state.findNotes[j]
+
+				let flavorProfile = coffee.flavorProfile[0]
+
+				if (flavorProfile.notes[note]) {
+					matchNotes++
+					// results.push(coffee)
+				}
+			}
+
+			if (matchNotes === this.state.findNotes.length) {
+				results.push(coffee)
+			}
+		}
+
+		console.log('RESULTS')
+		console.log(results)
+
+		this.setState({
+			discoverResults: results
+		})
 	}
 
 	filterCoffees() {
 		let results = this.state.coffees.filter(coffee => {
 			let flavorProfile = coffee.flavorProfile[0]
 
-			if (this.state.isSpicy) {
-				return (
-					flavorProfile.body === this.state.body &&
-					flavorProfile.acidity === this.state.acidity &&
-					flavorProfile.notes.isSpicy === this.state.isSpicy
-				)
-			} else if (this.state.body && this.state.acidity) {
+			if (this.state.body && this.state.acidity) {
 				return (
 					flavorProfile.body === this.state.body &&
 					flavorProfile.acidity === this.state.acidity
@@ -91,6 +153,7 @@ class Discover extends Component {
 		})
 
 		this.setState({
+			tempResults: results,
 			discoverResults: results
 		})
 	}
@@ -140,7 +203,7 @@ class Discover extends Component {
 					/>
 				)}
 
-				{this.state.discoverResults.length > 0 ? (
+				{this.state.tempResults.length > 0 ? (
 					<DiscoverResult discoverResults={this.state.discoverResults} />
 				) : (
 					''
