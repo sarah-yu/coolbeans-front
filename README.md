@@ -1,22 +1,37 @@
-##coolbeans
+# Cool Beans
 
-We have built a tool to recommend the user different varieties of coffee based on the criteria they offer. We conducted some background research to have a searchable database of different varieties of coffee and tagged each entry based on its flavor profile characteristics.
-
-##Getting Started
-Our app can be rendered in the browser by simply downloading the front end and running "npm run start"
+Cool Beans is an app that recommends you different varieties of coffee based on your taste.  
 
 
-##Built With
-Node, Express, and Mongoose
-React front end
-Heroku
-MLAB
+# Getting Started
+1. Install the back-end API of our app by following the instructions [here](https://github.com/mortiz01/coolbeans-back).
+2. Fork and clone this repo.
+3. In your terminal, run ```npm install```.
+4. Run ```npm run start```.
 
-##Authors
-Sarah Yu
-Declan Kurant
-Michael Ortiz
 
-##Acknowledgements
+# Technologies Used
+- MERN Stack (MongoDB, Express, React, Node.js)
+- JavaScript
+- HTML/CSS
+- Heroku
+- mLab
+
+
+# Team Members
+- Declan Kurant
+- Michael Ortiz
+- Sarah Yu
+
+
+# Roles
+We all worked together on planning the project and dividing up the work where we saw fit.
+Some features that each member worked on were:
+- Declan Kurant: discover coffees functionality, coffee show view, CSS, content creation
+- Michael Ortiz: edit coffee functionality, back-end routes, create coffee functionality
+- Sarah Yu: discover coffees functionality, coffee list view, create/delete coffee functionality, CSS
+
+
+# Acknowledgements
 espressocoffeeguide.com
 sweetmarias.com
