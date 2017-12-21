@@ -6,6 +6,7 @@ import './DiscoverResult.css'
 class DiscoverResult extends Component {
 	render() {
 		let coffees = this.props.discoverResults.map((coffee, index) => {
+			console.log(this.props.discoverResults.length)
 			return (
 				<div key={index} className="coffee">
 					<Link to={`/coffees/${coffee._id}`}>
@@ -35,8 +36,14 @@ class DiscoverResult extends Component {
 
 		return (
 			<div className="discover-results">
-				<h2>Results</h2>
-				<div className="coffees">{coffees}</div>
+				{this.props.discoverResults.length > 0 ? (
+					<div>
+						<h2> Results </h2>
+						<div className="coffees">{coffees}</div>
+					</div>
+				) : (
+					<h2> No results match your search criteria </h2>
+				)}
 			</div>
 		)
 	}

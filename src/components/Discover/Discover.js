@@ -28,6 +28,7 @@ class Discover extends Component {
 			isSweet: false,
 			isVeggie: false,
 			isWeird: false,
+			acidityBodyChoice: [],
 			findNotes: [],
 			tempResults: [], // results from body and acidity filter
 			discoverResults: []
@@ -75,8 +76,8 @@ class Discover extends Component {
 
 		let selectedNote = e.target.dataset.notes
 
-		if (e.target.style.backgroundColor !== 'red') {
-			e.target.style.backgroundColor = 'red'
+		if (e.target.style.backgroundColor !== 'skyblue') {
+			e.target.style.backgroundColor = 'skyblue'
 
 			if (this.state.findNotes.indexOf(selectedNote) < 0) {
 				this.state.findNotes.push(selectedNote)
@@ -89,7 +90,7 @@ class Discover extends Component {
 				this.filterCoffeesByNotes
 			)
 		} else {
-			e.target.style.backgroundColor = 'white'
+			e.target.style.backgroundColor = '#ffffff'
 
 			this.state.findNotes.splice(this.state.findNotes.indexOf(selectedNote), 1)
 
@@ -103,20 +104,20 @@ class Discover extends Component {
 	}
 
 	filterCoffeesByNotes() {
-		// console.log(this.state.findNotes)
+		console.log(this.state.findNotes)
 		// console.log('filtering by notes')
 		// console.log(this.state.discoverResults)
 
 		let results = []
 
-		// console.log(this.state.tempResults)
+		console.log(this.state.tempResults)
 
 		for (let i = 0; i < this.state.tempResults.length; i++) {
 			let coffee = this.state.tempResults[i]
 			let matchNotes = 0
-
 			for (let j = 0; j < this.state.findNotes.length; j++) {
 				let note = this.state.findNotes[j]
+
 				let flavorProfile = coffee.flavorProfile[0]
 
 				if (flavorProfile.notes[note]) {
@@ -130,8 +131,8 @@ class Discover extends Component {
 			}
 		}
 
-		// console.log('RESULTS')
-		// console.log(results)
+		console.log('RESULTS')
+		console.log(results)
 
 		this.setState({
 			discoverResults: results
@@ -183,6 +184,19 @@ class Discover extends Component {
 
 		return (
 			<div className="discover">
+				{this.state.bodyClicked ? (
+					<div id="prev-choices">
+						<h3> Previous Choices </h3>
+						<p> {this.state.body} Body </p>
+						{this.state.acidityClicked ? (
+							<p> {this.state.acidity} Acidity </p>
+						) : (
+							''
+						)}
+					</div>
+				) : (
+					''
+				)}
 				{this.state.bodyClicked && this.state.acidityClicked ? (
 					<DiscoverCriteria
 						criteriaName="Notes"
@@ -203,7 +217,7 @@ class Discover extends Component {
 					/>
 				)}
 
-				{this.state.discoverResults.length > 0 ? (
+				{this.state.tempResults.length > 0 ? (
 					<DiscoverResult discoverResults={this.state.discoverResults} />
 				) : (
 					''
