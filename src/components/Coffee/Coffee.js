@@ -41,7 +41,7 @@ class Coffee extends Component {
 		this.deleteCoffee = this.deleteCoffee.bind(this)
 		this.editCoffee = this.editCoffee.bind(this)
 
-		this.amendCoffee = this.updateCoffee.bind(this)
+		this.amendCoffee = this.amendCoffee.bind(this)
 		this.updateCoffeeProfile = this.updateCoffeeProfile.bind(this)
 		this.updateCoffeeProfileNotes = this.updateCoffeeProfileNotes.bind(this)
 
