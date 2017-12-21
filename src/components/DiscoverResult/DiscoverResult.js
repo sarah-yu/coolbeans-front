@@ -38,7 +38,7 @@ class DiscoverResult extends Component {
 			<div className="discover-results">
 				{this.props.discoverResults.length > 0 ? (
 					<div>
-						<h2> Results </h2>
+						<h2> Results ({this.props.discoverResults.length})</h2>
 						<div className="coffees">{coffees}</div>
 					</div>
 				) : (

@@ -33,5 +33,5 @@ Some features that each member worked on were:
 
 
 # Acknowledgements
-https://espressocoffeeguide.com/<br>
+https://espressocoffeeguide.com/
 https://www.sweetmarias.com/
