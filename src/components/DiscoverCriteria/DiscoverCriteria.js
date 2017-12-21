@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import PropTypes from 'prop-types'
 
 import './DiscoverCriteria.css'
 
@@ -24,6 +25,12 @@ class DiscoverCriteria extends Component {
 			</div>
 		)
 	}
+}
+
+DiscoverCriteria.propTypes = {
+	criteriaName: PropTypes.string.isRequired,
+	criteria: PropTypes.array.isRequired,
+	handleCriteria: PropTypes.func.isRequired
 }
 
 export default DiscoverCriteria
