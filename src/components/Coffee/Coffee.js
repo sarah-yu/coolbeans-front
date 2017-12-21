@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import axios from 'axios'
 
 import FlavorProfile from '../FlavorProfile/FlavorProfile'
 import EditCoffee from '../EditCoffee/EditCoffee'
