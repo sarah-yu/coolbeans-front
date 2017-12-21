@@ -3,7 +3,6 @@
 	width: 360px;
 	float: right;
 	position: relative;
-	/*margin-right: 200px;*/
 	margin-right: 10%;
 }
 
@@ -17,30 +16,20 @@
 .welcome {
 	display: flex;
 	flex-direction: column;
-	/*justify-content: space-around;
-	align-content: space-around;*/
 	min-width: 1000px;
 }
 
 .welcome-row {
-	/*border: 1px solid black;*/
 	position: relative;
-
 	background-color: #a06d38;
 	height: 300px;
 	width: 100%;
-
 	margin-bottom: 5px;
-	/*flex: none;
-
-	display: flex;*/
 }
 
 .welcome-row-writing {
 	display: flex;
 	flex-direction: column;
-	/*border: 1px solid black;*/
-	/*margin-right: 200px;*/
 	text-align: center;
 	justify-content: center;
 	float: left;

@@ -34,8 +34,9 @@ button,
 	width: 120px;
 }
 
+button:hover,
 .btn:hover {
-	background-color: #4ab0e3;
+	background-color: skyblue;
 	color: black;
 }
 

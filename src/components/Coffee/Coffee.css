@@ -1,6 +1,7 @@
-.coffee-img {
-	height: 400px;
-	width: 500px;
-	display: block;
-	margin: 0 auto;
+.edit-delete-coffee-btns {
+	margin-top: 30px;
+}
+
+.edit-delete-coffee-btns button {
+	margin-right: 30px;
 }
