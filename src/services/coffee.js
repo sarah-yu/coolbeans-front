@@ -80,7 +80,7 @@ export function createCoffee(newCoffee) {
 		})
 }
 
-export function editCoffee(id) {
+export function updateCoffee(id) {
 	axios
 		.put(`${servicePath}/coffees/${id}`, {
 			...this.state.coffee
@@ -98,5 +98,5 @@ export default {
 	getCoffees,
 	getCoffee,
 	createCoffee,
-	editCoffee
+	updateCoffee
 }
