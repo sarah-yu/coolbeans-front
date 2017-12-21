@@ -4,6 +4,12 @@ import '../NewCoffee/NewCoffee.css'
 
 class EditCoffee extends Component {
 	render() {
+		let { coffee } = this.props
+		let flavorProfile = coffee.flavorProfile[0]
+		let notes = flavorProfile.notes
+		console.log(notes)
+		console.log(this.props)
+
 		return (
 			<div className="form-container">
 				<h2>Edit this coffee's general details!</h2>
@@ -20,9 +26,9 @@ class EditCoffee extends Component {
 									<input
 										type="text"
 										name="name"
-										value={this.props.name}
+										value={coffee.name}
 										className="form-field"
-										onChange={this.props.handleNameInput}
+										onChange={this.props.updateCoffee}
 									/>
 								</div>
 
@@ -31,9 +37,9 @@ class EditCoffee extends Component {
 									<input
 										type="text"
 										name="region"
-										value={this.props.region}
+										value={coffee.region}
 										className="form-field"
-										onChange={this.props.handleRegionInput}
+										onChange={this.props.updateCoffee}
 									/>
 								</div>
 
@@ -42,9 +48,9 @@ class EditCoffee extends Component {
 									<input
 										type="text"
 										name="country"
-										value={this.props.country}
+										value={coffee.country}
 										className="form-field"
-										onChange={this.props.handleCountryInput}
+										onChange={this.props.updateCoffee}
 									/>
 								</div>
 
@@ -53,9 +59,9 @@ class EditCoffee extends Component {
 									<input
 										type="text"
 										name="imgUrl"
-										value={this.props.imgUrl}
+										value={coffee.imgUrl}
 										className="form-field"
-										onChange={this.props.handleImgInput}
+										onChange={this.props.updateCoffee}
 									/>
 								</div>
 
@@ -63,8 +69,8 @@ class EditCoffee extends Component {
 									<label>Description: </label>
 									<textarea
 										name="description"
-										value={this.props.description}
-										onChange={this.props.handleDescriptionInput}
+										value={coffee.description}
+										onChange={this.props.updateCoffee}
 									/>
 								</div>
 							</div>
@@ -80,8 +86,8 @@ class EditCoffee extends Component {
 										type="text"
 										name="body"
 										className="form-field"
-										value={this.props.body}
-										onChange={this.props.handleBody}
+										value={flavorProfile.body}
+										onChange={this.props.updateCoffeeProfile}
 									/>
 								</div>
 
@@ -91,8 +97,8 @@ class EditCoffee extends Component {
 										type="text"
 										name="acidity"
 										className="form-field"
-										value={this.props.acidity}
-										onChange={this.props.handleAcidity}
+										value={flavorProfile.acidity}
+										onChange={this.props.updateCoffeeProfile}
 									/>
 								</div>
 
@@ -100,64 +106,64 @@ class EditCoffee extends Component {
 									<input
 										type="checkbox"
 										name="isFruity"
-										value={this.props.isFruity}
-										onChange={this.props.handleFruity}
+										value={notes.isFruity}
+										onChange={this.props.updateCoffeeProfileNotes}
 									/>{' '}
 									Fruity<br />
 									<input
 										type="checkbox"
 										name="isSour"
-										value={this.props.isSour}
-										onChange={this.props.handleSour}
+										value={notes.isSour}
+										onChange={this.props.updateCoffeeProfileNotes}
 									/>{' '}
 									Sour/Fermented<br />
 									<input
 										type="checkbox"
 										name="isVeggie"
-										value={this.props.isVeggie}
-										onChange={this.props.handleVeggie}
+										value={notes.isVeggie}
+										onChange={this.props.updateCoffeeProfileNotes}
 									/>{' '}
 									Earthy/ Green <br />
 									<input
 										type="checkbox"
 										name="isRoasted"
-										value={this.props.isRoasted}
-										onChange={this.props.handleRoasted}
+										value={notes.isRoasted}
+										onChange={this.props.updateCoffeeProfileNotes}
 									/>{' '}
 									Roasted<br />
 									<input
 										type="checkbox"
 										name="isSpicy"
-										value={this.props.isSpicy}
-										onChange={this.props.handleSpicy}
+										value={notes.isSpicy}
+										onChange={this.props.updateCoffeeProfileNotes}
 									/>{' '}
 									Spicy<br />
 									<input
 										type="checkbox"
 										name="isNuttyCocoa"
-										value={this.props.isNuttyCocoa}
-										onChange={this.props.handleNuttyCocoa}
+										value={notes.isNuttyCocoa}
+										onChange={this.props.updateCoffeeProfileNotes}
 									/>{' '}
 									Nutty/Chocolate-y<br />
 									<input
 										type="checkbox"
 										name="isSweet"
-										value={this.props.isSweet}
-										onChange={this.props.handleSweet}
+										value={notes.isSweet}
+										onChange={this.props.updateCoffeeProfileNotes}
 									/>{' '}
 									Sweet<br />
 									<input
 										type="checkbox"
 										name="isFloral"
-										value={this.props.isFloral}
-										onChange={this.props.handleFloral}
+										value={notes.isFloral}
+										onChange={this.props.updateCoffeeProfileNotes}
 									/>{' '}
 									Floral<br />
 									<input
 										type="checkbox"
 										name="isWeird"
-										value={this.props.isWeird}
-										onChange={this.props.handleWeird}
+										value={notes.isWeird}
+										onChange={this.props.updateCoffeeProfileNotes}
 									/>{' '}
 									Weird<br />
 								</div>

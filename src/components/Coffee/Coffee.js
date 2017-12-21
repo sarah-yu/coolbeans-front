@@ -11,48 +11,39 @@ class Coffee extends Component {
 		super()
 
 		this.state = {
-			id: '',
-			name: '',
-			region: '',
-			country: '',
-			imgUrl: '',
-			description: '',
-
-			acidity: '',
-			body: '',
-			isWeird: false,
-			isFloral: false,
-			isSweet: false,
-			isNuttyCocoa: false,
-			isSpicy: false,
-			isRoasted: false,
-			isVeggie: false,
-			isSour: false,
-			isFruity: false,
-
+			coffee: {
+				name: '',
+				region: '',
+				country: '',
+				imgUrl: '',
+				description: '',
+				flavorProfile: [
+					{
+						acidity: '',
+						body: '',
+						notes: {
+							isWeird: false,
+							isFloral: false,
+							isSweet: false,
+							isNuttyCocoa: false,
+							isSpicy: false,
+							isRoasted: false,
+							isVeggie: false,
+							isSour: false,
+							isFruity: false
+						}
+					}
+				]
+			},
 			editClicked: false
 		}
 
 		this.deleteCoffee = this.deleteCoffee.bind(this)
 		this.editCoffee = this.editCoffee.bind(this)
 
-		this.handleNameInput = this.handleNameInput.bind(this)
-		this.handleRegionInput = this.handleRegionInput.bind(this)
-		this.handleCountryInput = this.handleCountryInput.bind(this)
-		this.handleDescriptionInput = this.handleDescriptionInput.bind(this)
-		this.handleImgInput = this.handleImgInput.bind(this)
-
-		this.handleBody = this.handleBody.bind(this)
-		this.handleAcidity = this.handleAcidity.bind(this)
-		this.handleFruity = this.handleFruity.bind(this)
-		this.handleSour = this.handleSour.bind(this)
-		this.handleVeggie = this.handleVeggie.bind(this)
-		this.handleRoasted = this.handleRoasted.bind(this)
-		this.handleNuttyCocoa = this.handleNuttyCocoa.bind(this)
-		this.handleSpicy = this.handleSpicy.bind(this)
-		this.handleSweet = this.handleSweet.bind(this)
-		this.handleFloral = this.handleFloral.bind(this)
-		this.handleWeird = this.handleWeird.bind(this)
+		this.updateCoffee = this.updateCoffee.bind(this)
+		this.updateCoffeeProfile = this.updateCoffeeProfile.bind(this)
+		this.updateCoffeeProfileNotes = this.updateCoffeeProfileNotes.bind(this)
 
 		this.handleFormSubmit = this.handleFormSubmit.bind(this)
 
@@ -64,129 +55,63 @@ class Coffee extends Component {
 		this.getCoffee(this.props.match.params._id)
 	}
 
-	handleNameInput(e) {
+	updateCoffee(e) {
 		this.setState({
-			name: e.target.value
+			coffee: {
+				...this.state.coffee,
+				[e.target.name]: e.target.value
+			}
 		})
 	}
 
-	handleRegionInput(e) {
+	updateCoffeeProfile(e) {
+		let flavorProfile = this.state.coffee.flavorProfile[0]
 		this.setState({
-			region: e.target.value
+			coffee: {
+				...this.state.coffee,
+				flavorProfile: [
+					{
+						...flavorProfile,
+						[e.target.name]: e.target.value
+					}
+				]
+			}
 		})
 	}
 
-	handleCountryInput(e) {
+	updateCoffeeProfileNotes(e) {
+		let notes = this.state.coffee.flavorProfile[0].notes
+		console.log(notes)
 		this.setState({
-			country: e.target.value
+			coffee: {
+				...this.state.coffee,
+				flavorProfile: [
+					{
+						...this.state.flavorProfile,
+						notes: {
+							...notes,
+							[e.target.name]: e.target.value
+						}
+					}
+				]
+			}
 		})
-	}
-
-	handleImgInput(e) {
-		this.setState({
-			imgUrl: e.target.value
-		})
-	}
-
-	handleDescriptionInput(e) {
-		this.setState({
-			description: e.target.value
-		})
-	}
-
-	handleBody(e) {
-		this.setState({
-			body: e.target.value
-		})
-	}
-
-	handleAcidity(e) {
-		this.setState({
-			acidity: e.target.value
-		})
-	}
-
-	handleFruity(e) {
-		this.setState({
-			isFruity: e.target.checked
-		})
-	}
-
-	handleSour(e) {
-		this.setState({
-			isSour: e.target.checked
-		})
-	}
-
-	handleVeggie(e) {
-		this.setState({
-			isVeggie: e.target.checked
-		})
-	}
-
-	handleRoasted(e) {
-		this.setState({
-			isRoasted: e.target.checked
-		})
-	}
-
-	handleSpicy(e) {
-		this.setState({
-			isSpicy: e.target.checked
-		})
-	}
-
-	handleNuttyCocoa(e) {
-		this.setState({
-			isNuttyCocoa: e.target.checked
-		})
-	}
-
-	handleSweet(e) {
-		this.setState({
-			isSweet: e.target.checked
-		})
-	}
-
-	handleFloral(e) {
-		this.setState({
-			isFloral: e.target.checked
-		})
-	}
-
-	handleWeird(e) {
-		this.setState({
-			isWeird: e.target.checked
-		})
+		console.log(notes)
 	}
 
 	handleFormSubmit(e) {
 		e.preventDefault()
+		console.log(this.state.coffee)
 		console.log('form was submitted')
 
 		axios
-			.put(`https://cool-beans-api.herokuapp.com/coffees/${this.state._id}`, {
-				name: this.state.name,
-				region: this.state.region,
-				country: this.state.country,
-				imgUrl: this.state.imgUrl,
-				description: this.state.description,
-
-				acidity: this.state.acidity,
-				body: this.state.body,
-				isWeird: this.state.isWeird,
-				isFloral: this.state.isFloral,
-				isSweet: this.state.isSweet,
-				isNuttyCocoa: this.state.isNuttyCocoa,
-				isSpicy: this.state.isSpicy,
-				isRoasted: this.state.isRoasted,
-				isVeggie: this.state.isVeggie,
-				isSour: this.state.isSour,
-				isFruity: this.state.isFruity
+			.put(`http://cool-beans-api.herokuapp.com/coffees/${this.state._id}`, {
+				...this.state.coffee
 			})
 			.then(response => {
-				console.log(response)
-				this.props.history.push(`/coffees/${response._id}`)
+				console.log(response.data._id)
+				console.log(response.data)
+				this.props.history.push(`/coffees/${response.data._id}`)
 				console.log('Updated!')
 			})
 			.catch(err => console.log(err))
@@ -210,62 +135,22 @@ class Coffee extends Component {
 		return (
 			<div>
 				<div className="coffee-img">
-					<img src={this.state.imgUrl} alt={this.state.name} />
+					<img src={this.state.coffee.imgUrl} alt={this.state.coffee.name} />
 				</div>
-				<h2>Country: {this.state.country}</h2>
-				<h3>Region: {this.state.region}</h3>
-				<p>Description: {this.state.description}</p>
-				<FlavorProfile
-					acidity={this.state.acidity}
-					body={this.state.body}
-					isWeird={this.state.isWeird}
-					isFloral={this.state.isFloral}
-					isSweet={this.state.isSweet}
-					isNuttyCocoa={this.state.isNuttyCocoa}
-					isSpicy={this.state.isSpicy}
-					isRoasted={this.state.isRoasted}
-					isVeggie={this.state.isVeggie}
-					isSour={this.state.isSour}
-					isFruity={this.state.isFruity}
-				/>
+				<h2>Country: {this.state.coffee.country}</h2>
+				<h3>Region: {this.state.coffee.region}</h3>
+				<p>Description: {this.state.coffee.description}</p>
+				<FlavorProfile profiles={this.state.coffee.flavorProfile} />
 				<button onClick={this.deleteCoffee}>Delete</button>
 				<button onClick={this.editCoffee}>Edit</button>
 				{this.state.editClicked ? (
 					<div className="edit-coffee">
 						<EditCoffee
-							name={this.state.name}
-							region={this.state.region}
-							country={this.state.country}
-							imgUrl={this.state.imgUrl}
-							description={this.state.description}
-							handleNameInput={this.handleNameInput}
-							handleImgInput={this.handleImgInput}
-							handleRegionInput={this.handleRegionInput}
-							handleCountryInput={this.handleCountryInput}
-							handleDescriptionInput={this.handleDescriptionInput}
-							acidity={this.state.acidity}
-							body={this.state.body}
-							isWeird={this.state.isWeird}
-							isFloral={this.state.isFloral}
-							isSweet={this.state.isSweet}
-							isNuttyCocoa={this.state.isNuttyCocoa}
-							isSpicy={this.state.isSpicy}
-							isRoasted={this.state.isRoasted}
-							isVeggie={this.state.isVeggie}
-							isSour={this.state.isSour}
-							isFruity={this.state.isFruity}
-							handleBody={this.handleBody}
-							handleAcidity={this.handleAcidity}
-							handleSour={this.handleSour}
-							handleSweet={this.handleSweet}
-							handleSpicy={this.handleSpicy}
-							handleWeird={this.handleWeird}
-							handleFloral={this.handleFloral}
-							handleNuttyCocoa={this.handleNuttyCocoa}
-							handleFruity={this.handleFruity}
-							handleRoasted={this.handleRoasted}
-							handleVeggie={this.handleVeggie}
+							coffee={this.state.coffee}
 							handleFormSubmit={this.handleFormSubmit}
+							updateCoffee={this.updateCoffee}
+							updateCoffeeProfile={this.updateCoffeeProfile}
+							updateCoffeeProfileNotes={this.updateCoffeeProfileNotes}
 						/>
 					</div>
 				) : (
