@@ -6,9 +6,9 @@ class FlavorProfile extends Component {
 		return (
 			<div>
 				<h3>Flavor Profile:</h3>
-				<h4>Body: {profile.body}</h4>
-				<h4>Acidity: {profile.acidity}</h4>
-				<h4>Notes:</h4>
+				<h4>{profile.body} Body </h4>
+				<h4>{profile.acidity} Acidity </h4>
+				<h4>Flavor Notes:</h4>
 				<ul>
 					{profile.notes.isWeird ? <li>Weird</li> : ''}
 					{profile.notes.isFloral ? <li>Floral</li> : ''}
