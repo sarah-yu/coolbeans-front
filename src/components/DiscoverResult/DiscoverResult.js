@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
+import PropTypes from 'prop-types'
 
 import './DiscoverResult.css'
 
@@ -46,6 +47,10 @@ class DiscoverResult extends Component {
 			</div>
 		)
 	}
+}
+
+DiscoverResult.propTypes = {
+	discoverResults: PropTypes.array.isRequired
 }
 
 export default DiscoverResult
