@@ -99,16 +99,20 @@ class Resource extends Component {
 					<h3> Here are some images that might be useful to you!</h3>
 
 					<h4>Flavor Wheel:</h4>
-					<img
-						src="http://www.scanews.coffee/wp-content/uploads/2016/01/SCAA_FlavorWheel.01.18.15.jpg"
-						alt="SCAA Coffee Flavor Wheel"
-					/>
+					<div className="resource-img">
+						<img
+							src="http://www.scanews.coffee/wp-content/uploads/2016/01/SCAA_FlavorWheel.01.18.15.jpg"
+							alt="SCAA Coffee Flavor Wheel"
+						/>
+					</div>
 
 					<h4>Intro to coffee profiles: </h4>
-					<img
-						src="https://i.pinimg.com/originals/29/2d/38/292d389baba11880be1bfe992ac6e672.jpg"
-						alt="World coffee map"
-					/>
+					<div className="resource-img">
+						<img
+							src="https://i.pinimg.com/originals/29/2d/38/292d389baba11880be1bfe992ac6e672.jpg"
+							alt="World coffee map"
+						/>
+					</div>
 				</div>
 			</section>
 		)

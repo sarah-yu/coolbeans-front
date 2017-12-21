@@ -64,15 +64,6 @@ class Discover extends Component {
 	}
 
 	handleNotes(e) {
-		// this.state.findNotes.push(e.target.dataset.notes)
-
-		// this.setState(
-		// 	{
-		// 		[e.target.dataset.notes]: true
-		// 	},
-		// 	this.filterCoffeesByNotes
-		// )
-
 		let selectedNote = e.target.dataset.notes
 
 		if (e.target.style.backgroundColor !== 'skyblue') {
@@ -115,7 +106,6 @@ class Discover extends Component {
 
 				if (flavorProfile.notes[note]) {
 					matchNotes++
-					// results.push(coffee)
 				}
 			}
 
