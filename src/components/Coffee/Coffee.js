@@ -4,7 +4,7 @@ import axios from 'axios'
 import FlavorProfile from '../FlavorProfile/FlavorProfile'
 import EditCoffee from '../EditCoffee/EditCoffee'
 
-import { getCoffee, removeCoffee, editCoffee } from '../../services/coffee'
+import { getCoffee, removeCoffee, updateCoffee } from '../../services/coffee'
 
 class Coffee extends Component {
 	constructor() {
@@ -49,7 +49,7 @@ class Coffee extends Component {
 
 		this.getCoffee = getCoffee.bind(this)
 		this.removeCoffee = removeCoffee.bind(this)
-		this.editCoffee = editCoffee.bind(this)
+		this.updateCoffee = updateCoffee.bind(this)
 	}
 
 	componentDidMount() {
@@ -105,7 +105,7 @@ class Coffee extends Component {
 		console.log(this.state.coffee)
 		console.log('form was submitted')
 
-		this.editCoffee()
+		this.updateCoffee()
 
 		this.setState({
 			editClicked: false
