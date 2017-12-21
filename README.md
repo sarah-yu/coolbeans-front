@@ -27,11 +27,11 @@ Cool Beans is an app that recommends you different varieties of coffee based on 
 # Roles
 We all worked together on planning the project and dividing up the work where we saw fit.
 Some features that each member worked on were:
-- Declan Kurant: discover coffees functionality, coffee show view, CSS, content creation
-- Michael Ortiz: edit coffee functionality, back-end routes, create coffee functionality
-- Sarah Yu: discover coffees functionality, coffee list view, create/delete coffee functionality, CSS
+- Declan Kurant: discover coffees functionality, coffee show view, CSS, content creation, front-end deployment
+- Michael Ortiz: edit coffee functionality, back-end routes, create coffee functionality, back-end deployment
+- Sarah Yu: discover coffees functionality, coffee list view, create/delete coffee functionality, CSS, back-end deployment
 
 
 # Acknowledgements
-espressocoffeeguide.com
-sweetmarias.com
+https://espressocoffeeguide.com/<br>
+https://www.sweetmarias.com/
