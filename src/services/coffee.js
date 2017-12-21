@@ -60,7 +60,6 @@ export function removeCoffee(id) {
 	axios
 		.delete(`${servicePath}/coffees/${id}`)
 		.then(res => {
-			console.log(`${this.state.name} coffee was deleted.`)
 			this.props.history.push('/coffees')
 		})
 		.catch(err => console.log(err))
@@ -70,7 +69,6 @@ export function createCoffee(newCoffee) {
 	axios
 		.post(`${servicePath}/coffees`, newCoffee)
 		.then(response => {
-			console.log(response)
 			this.props.history.push('/coffees')
 		})
 		.catch(err => {
@@ -85,10 +83,7 @@ export function updateCoffee(id) {
 			...this.state.coffee
 		})
 		.then(response => {
-			console.log(response.data._id)
-			console.log(response.data)
 			this.props.history.push(`/coffees/${response.data._id}`)
-			console.log('Updated!')
 		})
 		.catch(err => console.log(err))
 }

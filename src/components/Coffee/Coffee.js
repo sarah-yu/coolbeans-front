@@ -83,7 +83,6 @@ class Coffee extends Component {
 
 	updateCoffeeProfileNotes(e) {
 		let notes = this.state.coffee.flavorProfile[0].notes
-		console.log(notes)
 		this.setState({
 			coffee: {
 				...this.state.coffee,
@@ -103,11 +102,8 @@ class Coffee extends Component {
 
 	handleFormSubmit(e) {
 		e.preventDefault()
-		console.log(this.state.coffee)
-		console.log('form was submitted')
 
 		this.updateCoffee(this.props.match.params._id)
-		console.log('updated')
 
 		this.setState({
 			editClicked: false
