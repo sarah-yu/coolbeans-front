@@ -27,24 +27,30 @@ export function getCoffee(id) {
 			let flavorProfile = res.data.flavorProfile[0]
 
 			this.setState({
-				id: res.data._id,
-				name: res.data.name,
-				region: res.data.region,
-				country: res.data.country,
-				imgUrl: res.data.imgUrl,
-				description: res.data.description,
-
-				acidity: flavorProfile.acidity,
-				body: flavorProfile.body,
-				isWeird: flavorProfile.notes.isWeird,
-				isFloral: flavorProfile.notes.isFloral,
-				isSweet: flavorProfile.notes.isSweet,
-				isNuttyCocoa: flavorProfile.notes.isNuttyCocoa,
-				isSpicy: flavorProfile.notes.isSpicy,
-				isRoasted: flavorProfile.notes.isRoasted,
-				isVeggie: flavorProfile.notes.isVeggie,
-				isSour: flavorProfile.notes.isSour,
-				isFruity: flavorProfile.notes.isFruity
+				coffee: {
+					name: res.data.name,
+					region: res.data.region,
+					country: res.data.country,
+					imgUrl: res.data.imgUrl,
+					description: res.data.description,
+					flavorProfile: [
+						{
+							acidity: flavorProfile.acidity,
+							body: flavorProfile.body,
+							notes: {
+								isWeird: flavorProfile.notes.isWeird,
+								isFloral: flavorProfile.notes.isFloral,
+								isSweet: flavorProfile.notes.isSweet,
+								isNuttyCocoa: flavorProfile.notes.isNuttyCocoa,
+								isSpicy: flavorProfile.notes.isSpicy,
+								isRoasted: flavorProfile.notes.isRoasted,
+								isVeggie: flavorProfile.notes.isVeggie,
+								isSour: flavorProfile.notes.isSour,
+								isFruity: flavorProfile.notes.isFruity
+							}
+						}
+					]
+				}
 			})
 		})
 		.catch(err => {
@@ -74,8 +80,23 @@ export function createCoffee(newCoffee) {
 		})
 }
 
+export function editCoffee(id) {
+	axios
+		.put(`${servicePath}/coffees/${id}`, {
+			...this.state.coffee
+		})
+		.then(response => {
+			console.log(response.data._id)
+			console.log(response.data)
+			this.props.history.push(`/coffees/${response.data._id}`)
+			console.log('Updated!')
+		})
+		.catch(err => console.log(err))
+}
+
 export default {
 	getCoffees,
 	getCoffee,
-	createCoffee
+	createCoffee,
+	editCoffee
 }

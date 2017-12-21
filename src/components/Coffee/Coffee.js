@@ -4,7 +4,7 @@ import axios from 'axios'
 import FlavorProfile from '../FlavorProfile/FlavorProfile'
 import EditCoffee from '../EditCoffee/EditCoffee'
 
-import { getCoffee, removeCoffee } from '../../services/coffee'
+import { getCoffee, removeCoffee, editCoffee } from '../../services/coffee'
 
 class Coffee extends Component {
 	constructor() {
@@ -49,6 +49,7 @@ class Coffee extends Component {
 
 		this.getCoffee = getCoffee.bind(this)
 		this.removeCoffee = removeCoffee.bind(this)
+		this.editCoffee = editCoffee.bind(this)
 	}
 
 	componentDidMount() {
@@ -104,17 +105,7 @@ class Coffee extends Component {
 		console.log(this.state.coffee)
 		console.log('form was submitted')
 
-		axios
-			.put(`http://cool-beans-api.herokuapp.com/coffees/${this.state._id}`, {
-				...this.state.coffee
-			})
-			.then(response => {
-				console.log(response.data._id)
-				console.log(response.data)
-				this.props.history.push(`/coffees/${response.data._id}`)
-				console.log('Updated!')
-			})
-			.catch(err => console.log(err))
+		this.editCoffee()
 
 		this.setState({
 			editClicked: false

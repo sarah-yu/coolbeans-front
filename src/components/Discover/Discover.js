@@ -103,20 +103,20 @@ class Discover extends Component {
 	}
 
 	filterCoffeesByNotes() {
-		console.log(this.state.findNotes)
+		// console.log(this.state.findNotes)
 		// console.log('filtering by notes')
 		// console.log(this.state.discoverResults)
 
 		let results = []
 
-		console.log(this.state.tempResults)
+		// console.log(this.state.tempResults)
 
 		for (let i = 0; i < this.state.tempResults.length; i++) {
 			let coffee = this.state.tempResults[i]
 			let matchNotes = 0
+
 			for (let j = 0; j < this.state.findNotes.length; j++) {
 				let note = this.state.findNotes[j]
-
 				let flavorProfile = coffee.flavorProfile[0]
 
 				if (flavorProfile.notes[note]) {
@@ -130,8 +130,8 @@ class Discover extends Component {
 			}
 		}
 
-		console.log('RESULTS')
-		console.log(results)
+		// console.log('RESULTS')
+		// console.log(results)
 
 		this.setState({
 			discoverResults: results
@@ -203,7 +203,7 @@ class Discover extends Component {
 					/>
 				)}
 
-				{this.state.tempResults.length > 0 ? (
+				{this.state.discoverResults.length > 0 ? (
 					<DiscoverResult discoverResults={this.state.discoverResults} />
 				) : (
 					''
