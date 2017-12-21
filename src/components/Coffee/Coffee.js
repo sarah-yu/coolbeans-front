@@ -41,7 +41,7 @@ class Coffee extends Component {
 		this.deleteCoffee = this.deleteCoffee.bind(this)
 		this.editCoffee = this.editCoffee.bind(this)
 
-		this.updateCoffee = this.updateCoffee.bind(this)
+		this.amendCoffee = this.updateCoffee.bind(this)
 		this.updateCoffeeProfile = this.updateCoffeeProfile.bind(this)
 		this.updateCoffeeProfileNotes = this.updateCoffeeProfileNotes.bind(this)
 
@@ -56,7 +56,7 @@ class Coffee extends Component {
 		this.getCoffee(this.props.match.params._id)
 	}
 
-	updateCoffee(e) {
+	amendCoffee(e) {
 		this.setState({
 			coffee: {
 				...this.state.coffee,
@@ -139,7 +139,7 @@ class Coffee extends Component {
 						<EditCoffee
 							coffee={this.state.coffee}
 							handleFormSubmit={this.handleFormSubmit}
-							updateCoffee={this.updateCoffee}
+							amendCoffee={this.amendCoffee}
 							updateCoffeeProfile={this.updateCoffeeProfile}
 							updateCoffeeProfileNotes={this.updateCoffeeProfileNotes}
 						/>
