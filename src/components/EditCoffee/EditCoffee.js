@@ -9,7 +9,7 @@ class EditCoffee extends Component {
 		let notes = flavorProfile.notes
 		return (
 			<div className="form-container">
-				<h2>Edit this coffee's general details!</h2>
+				<h2>Edit coffee details</h2>
 
 				<div className="the-form">
 					<form onSubmit={this.props.handleFormSubmit}>
@@ -20,6 +20,7 @@ class EditCoffee extends Component {
 								</div>
 								<div className="form-section">
 									<label>Name: </label>
+									<br />
 									<input
 										type="text"
 										name="name"
@@ -31,6 +32,7 @@ class EditCoffee extends Component {
 
 								<div className="form-section">
 									<label>Region: </label>
+									<br />
 									<input
 										type="text"
 										name="region"
@@ -42,6 +44,7 @@ class EditCoffee extends Component {
 
 								<div className="form-section">
 									<label>Country: </label>
+									<br />
 									<input
 										type="text"
 										name="country"
@@ -53,6 +56,7 @@ class EditCoffee extends Component {
 
 								<div className="form-section">
 									<label>Image URL: </label>
+									<br />
 									<input
 										type="text"
 										name="imgUrl"
@@ -64,8 +68,10 @@ class EditCoffee extends Component {
 
 								<div className="form-section">
 									<label>Description: </label>
+									<br />
 									<textarea
 										name="description"
+										className="form-field"
 										value={coffee.description}
 										onChange={this.props.amendCoffee}
 									/>
@@ -79,6 +85,7 @@ class EditCoffee extends Component {
 
 								<div className="form-section">
 									<label>Body: </label>
+									<br />
 									<input
 										type="text"
 										name="body"
@@ -90,6 +97,7 @@ class EditCoffee extends Component {
 
 								<div className="form-section">
 									<label>Acidity: </label>
+									<br />
 									<input
 										type="text"
 										name="acidity"
@@ -97,6 +105,10 @@ class EditCoffee extends Component {
 										value={flavorProfile.acidity}
 										onChange={this.props.updateCoffeeProfile}
 									/>
+								</div>
+
+								<div className="form-section">
+									<label>Notes:</label>
 								</div>
 
 								<div className="form-section">
