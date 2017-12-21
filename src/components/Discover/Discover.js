@@ -199,19 +199,19 @@ class Discover extends Component {
 				)}
 				{this.state.bodyClicked && this.state.acidityClicked ? (
 					<DiscoverCriteria
-						criteriaName="Notes"
+						criteriaName="Choose some flavor notes!"
 						criteria={notesCriteria}
 						handleCriteria={this.handleNotes}
 					/>
 				) : this.state.bodyClicked ? (
 					<DiscoverCriteria
-						criteriaName="Acidity"
+						criteriaName="How much acidity do you like?"
 						criteria={acidityCriteria}
 						handleCriteria={this.handleAcidity}
 					/>
 				) : (
 					<DiscoverCriteria
-						criteriaName="Body"
+						criteriaName="What kind of body should your coffee have?"
 						criteria={bodyCriteria}
 						handleCriteria={this.handleBody}
 					/>

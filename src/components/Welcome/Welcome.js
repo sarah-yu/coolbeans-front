@@ -7,7 +7,7 @@ const Welcome = () => (
 	<div className="welcome">
 		<div className="welcome-row" id="row1">
 			<div className="welcome-row-writing">
-				<h3> Find a coffee to match your tastes... </h3>
+				<h3 className="welcome-h3"> Find a coffee to match your tastes... </h3>
 				<Link to="/discover">
 					<button className="btn">Discover</button>
 				</Link>
@@ -36,7 +36,7 @@ const Welcome = () => (
 
 		<div className="welcome-row" id="row3">
 			<div className="welcome-row-writing">
-				<h3> See our full coffee bean catalogue </h3>
+				<h3 className="welcome-h3"> See our full coffee bean catalogue </h3>
 				<Link to="/coffees">
 					<button className="btn">Show All</button>
 				</Link>

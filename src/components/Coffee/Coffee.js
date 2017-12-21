@@ -128,9 +128,9 @@ class Coffee extends Component {
 				<div className="coffee-img">
 					<img src={this.state.coffee.imgUrl} alt={this.state.coffee.name} />
 				</div>
-				<h2>Country: {this.state.coffee.country}</h2>
+				<h2>{this.state.coffee.name}</h2>
 				<h3>Region: {this.state.coffee.region}</h3>
-				<p>Description: {this.state.coffee.description}</p>
+				<p> {this.state.coffee.description}</p>
 				<FlavorProfile profiles={this.state.coffee.flavorProfile} />
 				<button onClick={this.deleteCoffee}>Delete</button>
 				<button onClick={this.editCoffee}>Edit</button>
