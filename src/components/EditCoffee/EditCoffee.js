@@ -7,9 +7,6 @@ class EditCoffee extends Component {
 		let { coffee } = this.props
 		let flavorProfile = coffee.flavorProfile[0]
 		let notes = flavorProfile.notes
-		console.log(notes)
-		console.log(this.props)
-
 		return (
 			<div className="form-container">
 				<h2>Edit this coffee's general details!</h2>

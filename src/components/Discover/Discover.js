@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import axios from 'axios'
 
 import './Discover.css'
 
@@ -64,6 +65,15 @@ class Discover extends Component {
 	}
 
 	handleNotes(e) {
+		// this.state.findNotes.push(e.target.dataset.notes)
+
+		// this.setState(
+		// 	{
+		// 		[e.target.dataset.notes]: true
+		// 	},
+		// 	this.filterCoffeesByNotes
+		// )
+
 		let selectedNote = e.target.dataset.notes
 
 		if (e.target.style.backgroundColor !== 'skyblue') {
@@ -106,6 +116,7 @@ class Discover extends Component {
 
 				if (flavorProfile.notes[note]) {
 					matchNotes++
+					// results.push(coffee)
 				}
 			}
 
@@ -113,7 +124,6 @@ class Discover extends Component {
 				results.push(coffee)
 			}
 		}
-
 		this.setState({
 			discoverResults: results
 		})
