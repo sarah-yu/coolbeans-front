@@ -81,6 +81,7 @@ export function createCoffee(newCoffee) {
 }
 
 export function updateCoffee(id) {
+	console.log(id)
 	axios
 		.put(`${servicePath}/coffees/${id}`, {
 			...this.state.coffee

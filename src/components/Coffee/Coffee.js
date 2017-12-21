@@ -107,7 +107,8 @@ class Coffee extends Component {
 		console.log(this.state.coffee)
 		console.log('form was submitted')
 
-		this.updateCoffee()
+		this.updateCoffee(this.props.match.params._id)
+		console.log('updated')
 
 		this.setState({
 			editClicked: false

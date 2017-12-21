@@ -28,7 +28,7 @@ class EditCoffee extends Component {
 										name="name"
 										value={coffee.name}
 										className="form-field"
-										onChange={this.props.updateCoffee}
+										onChange={this.props.amendCoffee}
 									/>
 								</div>
 
@@ -39,7 +39,7 @@ class EditCoffee extends Component {
 										name="region"
 										value={coffee.region}
 										className="form-field"
-										onChange={this.props.updateCoffee}
+										onChange={this.props.amendCoffee}
 									/>
 								</div>
 
@@ -50,7 +50,7 @@ class EditCoffee extends Component {
 										name="country"
 										value={coffee.country}
 										className="form-field"
-										onChange={this.props.updateCoffee}
+										onChange={this.props.amendCoffee}
 									/>
 								</div>
 
@@ -61,7 +61,7 @@ class EditCoffee extends Component {
 										name="imgUrl"
 										value={coffee.imgUrl}
 										className="form-field"
-										onChange={this.props.updateCoffee}
+										onChange={this.props.amendCoffee}
 									/>
 								</div>
 
@@ -70,7 +70,7 @@ class EditCoffee extends Component {
 									<textarea
 										name="description"
 										value={coffee.description}
-										onChange={this.props.updateCoffee}
+										onChange={this.props.amendCoffee}
 									/>
 								</div>
 							</div>
