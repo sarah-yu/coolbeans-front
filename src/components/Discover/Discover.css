@@ -11,3 +11,10 @@
 	align-items: center;
 	justify-content: center;
 }
+
+#prev-choices {
+	border: 1px solid #70a4b9;
+	min-width: 200px;
+	text-align: center;
+	margin-top: 20px;
+}

@@ -2,7 +2,9 @@
 	height: 300px;
 	width: 360px;
 	float: right;
-	margin-right: 200px;
+	position: relative;
+	/*margin-right: 200px;*/
+	margin-right: 10%;
 }
 
 #img2 {
@@ -17,6 +19,7 @@
 	flex-direction: column;
 	/*justify-content: space-around;
 	align-content: space-around;*/
+	min-width: 1000px;
 }
 
 .welcome-row {
