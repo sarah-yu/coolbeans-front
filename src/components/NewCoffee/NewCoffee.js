@@ -150,8 +150,6 @@ class NewCoffee extends Component {
 	handleSubmitInput(e) {
 		e.preventDefault()
 
-		console.log(this.state)
-
 		let newFlavorProfile = {
 			body: this.state.body,
 			acidity: this.state.acidity,

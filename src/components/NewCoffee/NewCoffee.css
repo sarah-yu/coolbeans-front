@@ -54,10 +54,6 @@ textarea {
 	text-align: center;
 }
 
-/*.form-submit-btn input {
-	width: 150px;
-}*/
-
 @media screen and (max-width: 800px) {
 	.form-field {
 		width: 280px;
