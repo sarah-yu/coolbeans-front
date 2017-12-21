@@ -22,8 +22,6 @@ export function getCoffee(id) {
 	axios
 		.get(`${servicePath}/coffees/${id}`)
 		.then(res => {
-			console.log(res.data)
-
 			let flavorProfile = res.data.flavorProfile[0]
 
 			this.setState({

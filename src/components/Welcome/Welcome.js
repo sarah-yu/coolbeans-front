@@ -43,7 +43,7 @@ const Welcome = () => (
 			</div>
 			<img
 				id="welcome-img"
-				src="https://d2zfkpu1r6ym98.cloudfront.net/sites/guideposts.org/files/story/senior_women_laughing_over_coffee_0.jpg"
+				src="http://grancolombiatours.com/wp-content/uploads/2017/09/coffee.jpg"
 				alt="Index"
 			/>
 		</div>
