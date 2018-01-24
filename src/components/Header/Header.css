@@ -12,8 +12,21 @@ nav a {
 	margin-right: 10px;
 }
 
+nav a:hover {
+	opacity: 0.8;
+}
+
 .logo {
 	height: 200px;
 	width: 300px;
 	margin-bottom: 22px;
+}
+
+@media screen and (max-width: 480px) {
+	nav a {
+		display: block;
+		text-align: center;
+		margin-right: 0;
+		margin-bottom: 10px;
+	}
 }

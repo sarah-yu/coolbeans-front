@@ -155,7 +155,7 @@ class Discover extends Component {
 			{ Earthy: 'isVeggie' },
 			{ Roasted: 'isRoasted' },
 			{ Spicy: 'isSpicy' },
-			{ 'Nutty / Chocolatey': 'isNuttyCocoa' },
+			{ Chocolatey: 'isNuttyCocoa' },
 			{ Sweet: 'isSweet' },
 			{ Floral: 'isFloral' },
 			{ Weird: 'isWeird' }
@@ -165,7 +165,7 @@ class Discover extends Component {
 			<div className="discover">
 				{this.state.bodyClicked ? (
 					<div id="prev-choices">
-						<h3> Previous Choices </h3>
+						<h3> Previous Choices: </h3>
 						<p> {this.state.body} Body </p>
 						{this.state.acidityClicked ? (
 							<p> {this.state.acidity} Acidity </p>

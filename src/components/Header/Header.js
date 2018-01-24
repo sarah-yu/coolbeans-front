@@ -13,10 +13,10 @@ const Header = () => (
 			/>
 		</Link>
 		<nav>
-			<Link to="/">Home |</Link>
-			<Link to="/resources">Learn |</Link>
-			<Link to="/coffees">Show All Coffees |</Link>
-			<Link to="/discover">Discover |</Link>
+			<Link to="/">Home</Link>
+			<Link to="/resources">Learn</Link>
+			<Link to="/coffees">See Coffees</Link>
+			<Link to="/discover">Discover</Link>
 			<Link to="/new-coffee">Add a New Coffee </Link>
 		</nav>
 	</header>
