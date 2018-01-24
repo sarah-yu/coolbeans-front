@@ -16,9 +16,11 @@
 	color: #fff;
 	height: 60vh;
 	width: 100vw;
+	padding: 0 2rem;
 }
 
 .welcome-heading {
+	text-align: center;
 	text-shadow: black 0.1em 0.1em 0.2em;
 }
 
