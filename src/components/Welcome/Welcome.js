@@ -6,9 +6,11 @@ import './Welcome.css'
 const Welcome = () => (
 	<div className="welcome">
 		<div className="welcome-container">
-			<h1>Discover new coffees that match your tastes</h1>
+			<h1 className="welcome-heading">
+				Discover new coffees that match your tastes
+			</h1>
 			<Link to="/discover">
-				<button className="btn">Discover</button>
+				<button className="welcome-discover-btn">Discover</button>
 			</Link>
 		</div>
 	</div>
