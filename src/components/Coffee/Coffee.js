@@ -122,13 +122,13 @@ class Coffee extends Component {
 
 	render() {
 		return (
-			<div>
+			<div className="coffee">
 				<div className="coffee-img">
 					<img src={this.state.coffee.imgUrl} alt={this.state.coffee.name} />
 				</div>
 				<h2>{this.state.coffee.name}</h2>
 				<h3>Region: {this.state.coffee.region}</h3>
-				<p> {this.state.coffee.description}</p>
+				<p className="coffee-description"> {this.state.coffee.description}</p>
 				<FlavorProfile profiles={this.state.coffee.flavorProfile} />
 				<div className="edit-delete-coffee-btns">
 					<button onClick={this.deleteCoffee}>Delete</button>

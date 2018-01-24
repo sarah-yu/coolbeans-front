@@ -1,7 +1,32 @@
+.coffee {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	margin: 0 auto;
+	padding: 0 30px;
+}
+
+.coffee-description {
+	width: 30%;
+}
+
 .edit-delete-coffee-btns {
 	margin-top: 30px;
 }
 
 .edit-delete-coffee-btns button {
 	margin-right: 30px;
+}
+
+@media screen and (max-width: 768px) {
+	.coffee-description {
+		width: 70%;
+	}
+}
+
+@media screen and (max-width: 480px) {
+	.coffee-description {
+		width: 100%;
+	}
 }
